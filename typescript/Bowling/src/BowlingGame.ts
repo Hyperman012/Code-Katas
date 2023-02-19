@@ -1,9 +1,9 @@
 export class Frame {
-    constructor(number: number, number2: number) {
+    constructor(private firstTry: number, private secondTry: number) {
 
     }
 
     score(): number {
-        return 0
+        return this.firstTry + this.secondTry;
     }
 }
