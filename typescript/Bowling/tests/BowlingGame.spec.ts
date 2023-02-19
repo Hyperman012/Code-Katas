@@ -4,12 +4,20 @@ import 'mocha';
 import {  Frame } from '../src/BowlingGame';
 
 describe('Frame', () => {
-    it('calculates a 0 score', () => {
+    it('has a 0 score', () => {
         const frame = new Frame(0, 0);
         expect(frame.score()).to.eq(0);
     });
-    it('calculates a score with 2 tries', () => {
+    it('has a score with 2 tries', () => {
         const frame = new Frame(1, 1);
         expect(frame.score()).to.eq(2);
+    });
+    it('has strike score', () => {
+        const frame = new Frame(10, 0);
+        expect(frame.score()).to.eq(10);
+    });
+    it('has spare score', () => {
+        const frame = new Frame(0, 10);
+        expect(frame.score()).to.eq(10);
     });
 });
