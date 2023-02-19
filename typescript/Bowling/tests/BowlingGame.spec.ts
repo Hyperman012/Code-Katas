@@ -33,14 +33,17 @@ describe('bowling game', () => {
     it('adds simple frame to a game', () => {
         const frame = new Frame(9,0);
         bowlingGame.addFrames(frame);
-        expect(bowlingGame.frameSummary()).to.deep.eq([frame])
+        hasExpectedFrames([frame]);
     });
+    function hasExpectedFrames(expectedFrames: Frame[]) {
+        expect(bowlingGame.frameSummary()).to.deep.eq(expectedFrames)
+    }
     it('adds strike frame to a game', () => {
         bowlingGame.addFrames(Frame.strike);
-        expect(bowlingGame.frameSummary()).to.deep.eq([Frame.strike])
+        hasExpectedFrames([Frame.strike]);
     });
     it('adds strike frames to a game', () => {
         bowlingGame.addFrames(Frame.strike, Frame.strike);
-        expect(bowlingGame.frameSummary()).to.deep.eq([Frame.strike,Frame.strike])
+        hasExpectedFrames([Frame.strike, Frame.strike]);
     });
 });
