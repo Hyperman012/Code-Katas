@@ -7,3 +7,8 @@ export class Frame {
         return this.firstTry + this.secondTry;
     }
 }
+export class BowlingGame {
+    calculateScore(): number {
+        return 0;
+    }
+}
