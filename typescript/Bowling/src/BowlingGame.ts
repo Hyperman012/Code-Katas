@@ -1,4 +1,6 @@
 export class Frame {
+    static gutter:Frame = new Frame(0,0)
+    static strike: Frame = new Frame(10,0);
     constructor(private firstTry: number, private secondTry: number) {
 
     }
