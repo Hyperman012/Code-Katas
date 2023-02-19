@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import { add } from '../src';
+import { add } from '../src/BowlingGame';
 
 describe('test', () => {
     it('adds 1 + 2', () => {
