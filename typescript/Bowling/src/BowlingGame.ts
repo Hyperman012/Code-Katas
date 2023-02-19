@@ -8,15 +8,16 @@ export class Frame {
     }
 }
 export class BowlingGame {
+    private frames: Frame[] = [];
     calculateScore(): number {
         return 0;
     }
 
     addFrame(frame: Frame) {
-
+        this.frames.push(frame)
     }
 
     frameSummary(): Frame[] {
-        return [new Frame(9, 0)]
+        return this.frames
     }
 }
