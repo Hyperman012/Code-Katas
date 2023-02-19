@@ -32,13 +32,19 @@ describe('bowling game', () => {
     it('adds simple frame to a game', () => {
         const bowlingGame = new BowlingGame();
         const frame = new Frame(9,0);
-        bowlingGame.addFrame(frame);
+        bowlingGame.addFrames(frame);
         expect(bowlingGame.frameSummary()).to.deep.eq([frame])
     });
     it('adds strike frame to a game', () => {
         const bowlingGame = new BowlingGame();
         const frame = new Frame(10,0);
-        bowlingGame.addFrame(frame);
+        bowlingGame.addFrames(frame);
         expect(bowlingGame.frameSummary()).to.deep.eq([frame])
+    });
+    it('adds strike frames to a game', () => {
+        const bowlingGame = new BowlingGame();
+        const frame = new Frame(10,0);
+        bowlingGame.addFrames(frame, frame);
+        expect(bowlingGame.frameSummary()).to.deep.eq([frame,frame])
     });
 });
