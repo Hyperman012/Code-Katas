@@ -12,11 +12,7 @@ export class Frame {
 export class BowlingGame {
     private frames: Frame[] = [];
     calculateScore(): number {
-        let sum = 0;
-        this.frames.forEach(frame => {
-            sum += frame.score();
-        })
-        return sum;
+      return this.frames.reduce((score:number, frame:Frame) => score+=frame.score(), 0)
     }
 
     addFrames(...frames: Frame[]) {
