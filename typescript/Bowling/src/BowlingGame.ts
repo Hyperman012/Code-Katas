@@ -3,4 +3,7 @@ export class Frame {
 
     }
 
+    score(): number {
+        return 0
+    }
 }
