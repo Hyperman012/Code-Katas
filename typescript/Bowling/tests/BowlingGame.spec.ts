@@ -21,23 +21,25 @@ describe('Frame', () => {
 });
 
 describe('bowling game', () => {
+    let bowlingGame: BowlingGame;
+
+    beforeEach(() => {
+        bowlingGame = new BowlingGame();
+    });
+
     it('calculates total score of an empty game ', () => {
-        const bowlingGame = new BowlingGame();
         expect(bowlingGame.calculateScore()).to.eq(0);
     });
     it('adds simple frame to a game', () => {
-        const bowlingGame = new BowlingGame();
         const frame = new Frame(9,0);
         bowlingGame.addFrames(frame);
         expect(bowlingGame.frameSummary()).to.deep.eq([frame])
     });
     it('adds strike frame to a game', () => {
-        const bowlingGame = new BowlingGame();
         bowlingGame.addFrames(Frame.strike);
         expect(bowlingGame.frameSummary()).to.deep.eq([Frame.strike])
     });
     it('adds strike frames to a game', () => {
-        const bowlingGame = new BowlingGame();
         bowlingGame.addFrames(Frame.strike, Frame.strike);
         expect(bowlingGame.frameSummary()).to.deep.eq([Frame.strike,Frame.strike])
     });
