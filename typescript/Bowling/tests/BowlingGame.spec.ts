@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import { add } from '../src/BowlingGame';
+import {  Frame } from '../src/BowlingGame';
 
-describe('test', () => {
-    it('adds 1 + 2', () => {
-        expect(add(1, 2)).to.eq(3);
+describe('Frame', () => {
+    it('Holds total score', () => {
+        expect(new Frame(0, 0)).to.not.be.null
     });
 });
