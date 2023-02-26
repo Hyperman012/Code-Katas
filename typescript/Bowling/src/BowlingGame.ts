@@ -8,6 +8,10 @@ export class Frame {
     score(): number {
         return this.firstTry + this.secondTry;
     }
+
+    isSpare() {
+        return this.firstTry !== 10 && this.firstTry + this.secondTry === 10;
+    }
 }
 export class BowlingGame {
     private frames: Frame[] = [];

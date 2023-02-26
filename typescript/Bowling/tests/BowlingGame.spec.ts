@@ -18,6 +18,14 @@ describe('Frame', () => {
         const frame = new Frame(0, 10);
         expect(frame.score()).to.eq(10);
     });
+
+    it('spare is a spare', () => {
+        const frame = new Frame(0, 10);
+        expect(frame.isSpare()).to.be.true;
+    });
+    it('strike is a not spare', () => {
+        expect(Frame.strike.isSpare()).to.be.false;
+    });
 });
 
 describe('bowling game', () => {
