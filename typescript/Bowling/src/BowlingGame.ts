@@ -23,19 +23,17 @@ export class BowlingGame {
       return this.frames.reduce((score, frame, currentIndex) => this.addNextFrame(score,frame,currentIndex), 0)
     }
 
-    private addNextFrame(score: number, frame: Frame, currentIndex:number) {
-        const currentFrame = frame.totalPinCount();
-        score = this.addIfSpare(frame, score, currentIndex);
-        return score + currentFrame;
+    private addNextFrame(previousScore: number, currentFrame: Frame, currentIndex:number) {
+        return previousScore + currentFrame.totalPinCount() + this.addIfSpare(currentFrame, currentIndex)
     }
 
 
-    private addIfSpare(frame: Frame, score: number, currentIndex: number) {
+    private addIfSpare(frame: Frame, currentIndex: number) {
         if (!frame.isSpare()) {
-            return score;
+            return 0;
         }
 
-        return score + this.frames[currentIndex + 1].firstTry;
+        return this.frames[currentIndex + 1].firstTry;
     }
 
     addFrames(...frames: Frame[]) {
