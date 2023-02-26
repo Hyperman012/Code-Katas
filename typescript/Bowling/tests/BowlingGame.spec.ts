@@ -29,6 +29,16 @@ describe('Frame', () => {
     it('gutter is not a spare', () => {
         expect(Frame.gutter.isSpare()).to.be.false;
     });
+    it('strike is a strike', () => {
+        expect(Frame.strike.isStrike()).to.be.true;
+    });
+    it('spare is not a strike', () => {
+        const frame = new Frame(0, 10);
+        expect(frame.isStrike()).to.be.false;
+    });
+    it('gutter is not a strike', () => {
+        expect(Frame.gutter.isStrike()).to.be.false;
+    });
 
 });
 

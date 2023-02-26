@@ -13,7 +13,7 @@ export class Frame {
         return !this.isStrike() && this.totalPinCount() === 10;
     }
 
-    private isStrike() {
+    isStrike() {
         return this.firstTry === 10;
     }
 }
