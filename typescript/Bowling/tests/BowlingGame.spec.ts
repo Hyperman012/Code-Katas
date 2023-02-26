@@ -5,18 +5,18 @@ import { BowlingGame, Frame } from '../src/BowlingGame';
 
 describe('Frame', () => {
     it('has a 0 score', () => {
-        expect(Frame.gutter.score()).to.eq(0);
+        expect(Frame.gutter.totalPinCount()).to.eq(0);
     });
     it('has a score with 2 tries', () => {
         const frame = new Frame(1, 1);
-        expect(frame.score()).to.eq(2);
+        expect(frame.totalPinCount()).to.eq(2);
     });
     it('has strike score', () => {
-        expect(Frame.strike.score()).to.eq(10);
+        expect(Frame.strike.totalPinCount()).to.eq(10);
     });
     it('has spare score', () => {
         const frame = new Frame(0, 10);
-        expect(frame.score()).to.eq(10);
+        expect(frame.totalPinCount()).to.eq(10);
     });
 
     it('spare is a spare', () => {

@@ -5,12 +5,12 @@ export class Frame {
 
     }
 
-    score(): number {
+    totalPinCount(): number {
         return this.firstTry + this.secondTry;
     }
 
     isSpare() {
-        return !this.isStrike() && this.score() === 10;
+        return !this.isStrike() && this.totalPinCount() === 10;
     }
 
     private isStrike() {
@@ -20,7 +20,7 @@ export class Frame {
 export class BowlingGame {
     private frames: Frame[] = [];
     calculateScore(): number {
-      return this.frames.reduce((score:number, frame:Frame) => score+=frame.score(), 0)
+      return this.frames.reduce((score:number, frame:Frame) => score+=frame.totalPinCount(), 0)
     }
 
     addFrames(...frames: Frame[]) {
