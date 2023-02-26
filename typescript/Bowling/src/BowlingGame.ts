@@ -20,7 +20,11 @@ export class Frame {
 export class BowlingGame {
     private frames: Frame[] = [];
     calculateScore(): number {
-      return this.frames.reduce((score:number, frame:Frame) => score+=frame.totalPinCount(), 0)
+      return this.frames.reduce(this.addNextFrame, 0)
+    }
+
+    private addNextFrame(score: number, frame: Frame, currentIndex:number) {
+        return score += frame.totalPinCount();
     }
 
     addFrames(...frames: Frame[]) {
