@@ -10,7 +10,11 @@ export class Frame {
     }
 
     isSpare() {
-        return this.firstTry !== 10 && this.firstTry + this.secondTry === 10;
+        return !this.isStrike() && this.score() === 10;
+    }
+
+    private isStrike() {
+        return this.firstTry === 10;
     }
 }
 export class BowlingGame {
