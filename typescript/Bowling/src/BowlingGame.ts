@@ -1,7 +1,7 @@
 export class Frame {
     static gutter:Frame = new Frame(0,0)
     static strike: Frame = new Frame(10,0);
-    constructor(private firstTry: number, private secondTry: number) {
+    constructor(public firstTry: number, private secondTry: number) {
 
     }
 
@@ -20,11 +20,16 @@ export class Frame {
 export class BowlingGame {
     private frames: Frame[] = [];
     calculateScore(): number {
-      return this.frames.reduce(this.addNextFrame, 0)
+      return this.frames.reduce((score, frame, currentIndex) => this.addNextFrame(score,frame,currentIndex), 0)
     }
 
     private addNextFrame(score: number, frame: Frame, currentIndex:number) {
+        if (frame.isSpare()){
+            const currentFrame = frame.totalPinCount();
+            return score += currentFrame + this.frames[currentIndex +1].firstTry;
+        }
         return score += frame.totalPinCount();
+
     }
 
     addFrames(...frames: Frame[]) {
