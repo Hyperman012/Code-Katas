@@ -26,6 +26,10 @@ describe('Frame', () => {
     it('strike is a not spare', () => {
         expect(Frame.strike.isSpare()).to.be.false;
     });
+    it('gutter is not a spare', () => {
+        expect(Frame.gutter.isSpare()).to.be.false;
+    });
+
 });
 
 describe('bowling game', () => {
