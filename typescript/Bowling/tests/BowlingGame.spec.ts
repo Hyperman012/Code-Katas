@@ -35,6 +35,14 @@ describe('bowling game', () => {
         bowlingGame.addFrames(ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame);
         expect(bowlingGame.calculateScore()).to.eq(90);
     });
+
+    xit('calculates a game with one spare', () => {
+        const spareFrame = new Frame(9,1);
+        bowlingGame.addFrames(spareFrame, ninePinFrame)
+        const scoreByFrame = (9+1+9)+9;
+        expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
+    });
+
     it('adds simple frame to a game', () => {
         bowlingGame.addFrames(ninePinFrame);
         hasExpectedFrames([ninePinFrame]);
