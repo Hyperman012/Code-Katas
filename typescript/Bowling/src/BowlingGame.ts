@@ -25,12 +25,18 @@ export class BowlingGame {
 
     private addNextFrame(score: number, frame: Frame, currentIndex:number) {
         const currentFrame = frame.totalPinCount();
-        if (frame.isSpare()){
-            return score += currentFrame + this.frames[currentIndex +1].firstTry;
-        }
-        return score += currentFrame;
+        score = this.addIfSpare(frame, score, currentIndex);
+        return score + currentFrame;
     }
 
+
+    private addIfSpare(frame: Frame, score: number, currentIndex: number) {
+        if (!frame.isSpare()) {
+            return score;
+        }
+
+        return score + this.frames[currentIndex + 1].firstTry;
+    }
 
     addFrames(...frames: Frame[]) {
         this.frames.push(...frames)
