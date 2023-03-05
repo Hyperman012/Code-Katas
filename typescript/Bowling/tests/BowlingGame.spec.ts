@@ -50,6 +50,21 @@ describe('bowling game', () => {
         bowlingGame = new BowlingGame();
     });
 
+    it('adds simple frame to a game', () => {
+        bowlingGame.addFrames(ninePinFrame);
+        hasExpectedFrames([ninePinFrame]);
+    });
+
+    it('adds strike frame to a game', () => {
+        bowlingGame.addFrames(Frame.strike);
+        hasExpectedFrames([Frame.strike]);
+    });
+
+    it('adds strike frames to a game', () => {
+        bowlingGame.addFrames(Frame.strike, Frame.strike);
+        hasExpectedFrames([Frame.strike, Frame.strike]);
+    });
+
     it('calculates total score of an empty game ', () => {
         expect(bowlingGame.calculateScore()).to.eq(0);
     });
@@ -71,6 +86,9 @@ describe('bowling game', () => {
         const scoreByFrame = (9+1+9) + (9+1+9) + 9;
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
     });
+    function hasExpectedFrames(expectedFrames: Frame[]) {
+        expect(bowlingGame.frameSummary()).to.deep.eq(expectedFrames)
+    }
 
     describe('calculating a game with one strike and ', () => {
         beforeEach(() => {
@@ -119,21 +137,5 @@ describe('bowling game', () => {
             const scoreByFrame = (10+10+6) + (10+6+1) + (6 + 1);
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
-    });
-
-    it('adds simple frame to a game', () => {
-        bowlingGame.addFrames(ninePinFrame);
-        hasExpectedFrames([ninePinFrame]);
-    });
-    function hasExpectedFrames(expectedFrames: Frame[]) {
-        expect(bowlingGame.frameSummary()).to.deep.eq(expectedFrames)
-    }
-    it('adds strike frame to a game', () => {
-        bowlingGame.addFrames(Frame.strike);
-        hasExpectedFrames([Frame.strike]);
-    });
-    it('adds strike frames to a game', () => {
-        bowlingGame.addFrames(Frame.strike, Frame.strike);
-        hasExpectedFrames([Frame.strike, Frame.strike]);
     });
 });
