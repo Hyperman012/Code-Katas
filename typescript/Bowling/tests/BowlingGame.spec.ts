@@ -99,6 +99,16 @@ describe('bowling game', () => {
             const scoreByFrame = (10+0+6) + 6;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
+        it('calculates 2 strikes and gutter ', () => {
+            bowlingGame.addFrames(Frame.strike, Frame.gutter)
+            const scoreByFrame = (10+10+0) + (10+0+0) + 0;
+            expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
+        });
+        it('calculates 2 strikes and nine pin ', () => {
+            bowlingGame.addFrames(Frame.strike,ninePinFrame)
+            const scoreByFrame = (10+10+9) + (10+9+0) + (9+0);
+            expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
+        });
 
     });
 
