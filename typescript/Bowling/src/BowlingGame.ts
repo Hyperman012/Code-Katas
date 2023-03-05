@@ -42,7 +42,7 @@ export class BowlingGame {
             return 0;
         }
 
-        return 9;
+        return this.frames[currentIndex + 1].firstTry;
     }
 
     addFrames(...frames: Frame[]) {

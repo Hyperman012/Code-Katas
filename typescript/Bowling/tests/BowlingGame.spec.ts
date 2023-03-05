@@ -78,6 +78,13 @@ describe('bowling game', () => {
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
     });
 
+    it('calculates a game with one strike and a frame of 6', () => {
+        const sixPinFrame = new Frame(6, 0);
+        bowlingGame.addFrames(Frame.strike, sixPinFrame)
+        const scoreByFrame = (10+6+0) + 6;
+        expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
+    });
+
 
     it('adds simple frame to a game', () => {
         bowlingGame.addFrames(ninePinFrame);
