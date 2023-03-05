@@ -42,7 +42,8 @@ export class BowlingGame {
             return 0;
         }
 
-        return this.frames[currentIndex + 1].firstTry;
+        const nextFrame = this.frames[currentIndex + 1];
+        return nextFrame.totalPinCount();
     }
 
     addFrames(...frames: Frame[]) {
