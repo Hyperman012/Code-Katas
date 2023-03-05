@@ -114,8 +114,11 @@ describe('bowling game', () => {
             const scoreByFrame = (10+10+10) + (10+10+0) + (10);
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
-
-
+        it('calculates 2 strikes and a frame of 6/1', () => {
+            bowlingGame.addFrames(Frame.strike,new Frame(6, 1))
+            const scoreByFrame = (10+10+6) + (10+6+1) + (6 + 1);
+            expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
+        });
     });
 
     it('adds simple frame to a game', () => {

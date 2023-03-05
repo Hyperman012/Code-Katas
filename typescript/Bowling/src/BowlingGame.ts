@@ -45,7 +45,12 @@ export class BowlingGame {
             return 0;
         }
         const nextFrame = this.frames[currentIndex + 1];
-        return nextFrame.totalPinCount() + this.strikeBonusScore(nextFrame, currentIndex + 1);
+        if (nextFrame.isStrike())
+        {
+            const futureFrame = this.frames[currentIndex + 2];
+            return nextFrame.totalPinCount() + futureFrame.firstRoll
+        }
+        return nextFrame.totalPinCount()
     }
 
     addFrames(...frames: Frame[]) {
