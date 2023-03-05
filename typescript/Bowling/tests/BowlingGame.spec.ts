@@ -44,7 +44,7 @@ describe('Frame', () => {
 
 describe('bowling game', () => {
     let bowlingGame: BowlingGame;
-    const ninePinFrame = new Frame(9,0);
+    const ninePinFrame = new Frame(9, 0);
 
     beforeEach(() => {
         bowlingGame = new BowlingGame();
@@ -69,23 +69,24 @@ describe('bowling game', () => {
         expect(bowlingGame.calculateScore()).to.eq(0);
     });
     it('calculates total score of an game with all 9 pins ', () => {
-        bowlingGame.addFrames(ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame,ninePinFrame);
+        bowlingGame.addFrames(ninePinFrame, ninePinFrame, ninePinFrame, ninePinFrame, ninePinFrame, ninePinFrame, ninePinFrame, ninePinFrame, ninePinFrame, ninePinFrame);
         expect(bowlingGame.calculateScore()).to.eq(90);
     });
 
     it('calculates a game with one spare', () => {
-        const spareFrame = new Frame(9,1);
+        const spareFrame = new Frame(9, 1);
         bowlingGame.addFrames(spareFrame, ninePinFrame)
-        const scoreByFrame = (9+1+9)+9;
+        const scoreByFrame = (9 + 1 + 9) + 9;
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
     });
 
     it('calculates a game with two spare', () => {
-        const spareFrame = new Frame(9,1);
+        const spareFrame = new Frame(9, 1);
         bowlingGame.addFrames(spareFrame, spareFrame, ninePinFrame)
-        const scoreByFrame = (9+1+9) + (9+1+9) + 9;
+        const scoreByFrame = (9 + 1 + 9) + (9 + 1 + 9) + 9;
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
     });
+
     function hasExpectedFrames(expectedFrames: Frame[]) {
         expect(bowlingGame.frameSummary()).to.deep.eq(expectedFrames)
     }
@@ -96,45 +97,45 @@ describe('bowling game', () => {
         });
         it('a frame 9/0', () => {
             bowlingGame.addFrames(ninePinFrame)
-            const scoreByFrame = (10+9+0) + 9;
+            const scoreByFrame = (10 + 9 + 0) + 9;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
         it('a frame of 6/0', () => {
             const sixPinFrame = new Frame(6, 0);
             bowlingGame.addFrames(sixPinFrame)
-            const scoreByFrame = (10+6+0) + 6;
+            const scoreByFrame = (10 + 6 + 0) + 6;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
         it('a frame of 6/1', () => {
             const sixPinFrame = new Frame(6, 1);
             bowlingGame.addFrames(sixPinFrame)
-            const scoreByFrame = (10+6+1) + 7;
+            const scoreByFrame = (10 + 6 + 1) + 7;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
         it('a frame of 0/6', () => {
             const sixPinFrame = new Frame(0, 6);
             bowlingGame.addFrames(sixPinFrame)
-            const scoreByFrame = (10+0+6) + 6;
+            const scoreByFrame = (10 + 0 + 6) + 6;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
         it('a strike and gutter', () => {
             bowlingGame.addFrames(Frame.strike, Frame.gutter)
-            const scoreByFrame = (10+10+0) + (10+0+0) + 0;
+            const scoreByFrame = (10 + 10 + 0) + (10 + 0 + 0) + 0;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
         it('a strike and 9/0', () => {
-            bowlingGame.addFrames(Frame.strike,ninePinFrame)
-            const scoreByFrame = (10+10+9) + (10+9+0) + (9+0);
+            bowlingGame.addFrames(Frame.strike, ninePinFrame)
+            const scoreByFrame = (10 + 10 + 9) + (10 + 9 + 0) + (9 + 0);
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
         it('2 more strikes and gutter', () => {
-            bowlingGame.addFrames(Frame.strike,Frame.strike, Frame.gutter)
-            const scoreByFrame = (10+10+10) + (10+10+0) + (10);
+            bowlingGame.addFrames(Frame.strike, Frame.strike, Frame.gutter)
+            const scoreByFrame = (10 + 10 + 10) + (10 + 10 + 0) + (10);
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
         it('a strikes and frame of 6/1', () => {
-            bowlingGame.addFrames(Frame.strike,new Frame(6, 1))
-            const scoreByFrame = (10+10+6) + (10+6+1) + (6 + 1);
+            bowlingGame.addFrames(Frame.strike, new Frame(6, 1))
+            const scoreByFrame = (10 + 10 + 6) + (10 + 6 + 1) + (6 + 1);
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
     });
