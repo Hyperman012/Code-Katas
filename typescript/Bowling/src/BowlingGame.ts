@@ -1,12 +1,12 @@
 export class Frame {
     static gutter:Frame = new Frame(0,0)
     static strike: Frame = new Frame(10,0);
-    constructor(public firstTry: number, private secondTry: number) {
+    constructor(public firstRoll: number, private secondRoll: number) {
 
     }
 
     totalPinCount(): number {
-        return this.firstTry + this.secondTry;
+        return this.firstRoll + this.secondRoll;
     }
 
     isSpare() {
@@ -14,7 +14,7 @@ export class Frame {
     }
 
     isStrike() {
-        return this.firstTry === 10;
+        return this.firstRoll === 10;
     }
 }
 export class BowlingGame {
@@ -37,7 +37,7 @@ export class BowlingGame {
         if (!frame.isSpare()) {
             return 0;
         }
-        return this.frames[currentIndex + 1].firstTry;
+        return this.frames[currentIndex + 1].firstRoll;
     }
 
     private strikeBonusScore(frame: Frame, currentIndex: number): number {
