@@ -73,21 +73,23 @@ describe('bowling game', () => {
     });
 
     describe('strikes', () => {
+        beforeEach(() => {
+            bowlingGame.addFrames(Frame.strike);
+        });
         it('calculates a game with one strike', () => {
-            bowlingGame.addFrames(Frame.strike, ninePinFrame)
+            bowlingGame.addFrames(ninePinFrame)
             const scoreByFrame = (10+9+0) + 9;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
         it('calculates a game with one strike and a frame of 6', () => {
             const sixPinFrame = new Frame(6, 0);
-            bowlingGame.addFrames(Frame.strike, sixPinFrame)
+            bowlingGame.addFrames(sixPinFrame)
             const scoreByFrame = (10+6+0) + 6;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
-
         it('calculates a game with one strike and a frame of 6/1', () => {
             const sixPinFrame = new Frame(6, 1);
-            bowlingGame.addFrames(Frame.strike, sixPinFrame)
+            bowlingGame.addFrames(sixPinFrame)
             const scoreByFrame = (10+6+1) + 7;
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
