@@ -24,7 +24,8 @@ export class BowlingGame {
     }
 
     private addNextFrame(previousScore: number, currentFrame: Frame, currentIndex:number) {
-        return previousScore + currentFrame.totalPinCount() + this.addIfSpare(currentFrame, currentIndex)
+        const baseNewScore = previousScore + currentFrame.totalPinCount();
+        return baseNewScore + this.addIfSpare(currentFrame, currentIndex) + this.addIfStrike(currentFrame, currentIndex);
     }
 
 
@@ -34,6 +35,14 @@ export class BowlingGame {
         }
 
         return this.frames[currentIndex + 1].firstTry;
+    }
+
+    private addIfStrike(frame: Frame, currentIndex: number) {
+        if(!frame.isStrike()) {
+            return 0;
+        }
+
+        return 9;
     }
 
     addFrames(...frames: Frame[]) {

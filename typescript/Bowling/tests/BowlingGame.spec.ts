@@ -72,7 +72,7 @@ describe('bowling game', () => {
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
     });
 
-    xit('calculates a game with one strike', () => {
+    it('calculates a game with one strike', () => {
         bowlingGame.addFrames(Frame.strike, ninePinFrame)
         const scoreByFrame = (10+9+0) + 9;
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
