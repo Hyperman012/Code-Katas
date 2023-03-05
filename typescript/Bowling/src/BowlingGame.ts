@@ -37,19 +37,14 @@ export class BowlingGame {
         return this.frames[currentIndex + 1].firstTry;
     }
 
-    private addIfStrike(frame: Frame, currentIndex: number) {
+    private addIfStrike(frame: Frame, currentIndex: number): number {
         if(!frame.isStrike()) {
             return 0;
         }
 
         const nextFrame = this.frames[currentIndex + 1];
 
-        if (nextFrame.isStrike()) {
-            const nextNextFrame = this.frames[currentIndex + 2];
-            return nextFrame.totalPinCount() + nextNextFrame.firstTry
-        }
-
-        return nextFrame.totalPinCount();
+        return nextFrame.totalPinCount() + this.addIfStrike(nextFrame, currentIndex + 1);
     }
 
     addFrames(...frames: Frame[]) {
