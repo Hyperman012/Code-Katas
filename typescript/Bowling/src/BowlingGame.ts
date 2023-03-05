@@ -46,11 +46,15 @@ export class BowlingGame {
     private strikeBonusScore(frame: Frame, currentIndex: number): number {
         if (!frame.isStrike()) return 0;
 
-        const nextFrame = this.frames[currentIndex + 1];
+        const nextFrame = this.getFrame(currentIndex + 1);
         if (!nextFrame.isStrike()) return nextFrame.totalPinCount()
 
-        const futureFrame = this.frames[currentIndex + 2];
-        return nextFrame.totalPinCount() + futureFrame.firstRoll
+        const frameAfterNext = this.getFrame(currentIndex + 2);
+        return nextFrame.totalPinCount() + frameAfterNext.firstRoll
+    }
+
+    private getFrame(index: number): Frame {
+        return this.frames[index];
     }
 
     addFrames(...frames: Frame[]) {
