@@ -19,6 +19,10 @@ export class Frame {
     isStrike() {
         return this.firstRoll === 10;
     }
+
+    totalOfNextTwoRolls() {
+        return this.firstRoll + this.secondRoll;
+    }
 }
 
 export class BowlingGame {
@@ -57,7 +61,7 @@ export class BowlingGame {
         if (!frame.isStrike()) return 0;
 
         const nextFrame = this.getFrame(currentIndex + 1);
-        if (!nextFrame.isStrike()) return nextFrame.totalPinCount()
+        if (!nextFrame.isStrike() || this.isFinalFrame(currentIndex + 1)) return nextFrame.totalOfNextTwoRolls()
 
         const frameAfterNext = this.getFrame(currentIndex + 2);
         return nextFrame.totalPinCount() + frameAfterNext.firstRoll

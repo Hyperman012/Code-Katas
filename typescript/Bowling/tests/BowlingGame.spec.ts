@@ -40,7 +40,7 @@ describe('Frame', () => {
         expect(Frame.gutter.isStrike()).to.be.false;
     });
     it('can have 3 rolls', () => {
-        expect(new Frame(9,1,2).totalPinCount()).to.eq(12)
+        expect(new Frame(9, 1, 2).totalPinCount()).to.eq(12)
     });
 
 });
@@ -48,6 +48,7 @@ describe('Frame', () => {
 describe('bowling game', () => {
     let bowlingGame: BowlingGame;
     const ninePinFrame = new Frame(9, 0);
+    const finalStrikeFrame = new Frame(10, 10, 10);
 
     beforeEach(() => {
         bowlingGame = new BowlingGame();
@@ -90,10 +91,24 @@ describe('bowling game', () => {
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
     });
     it('calculates the final frame with one strike', () => {
-        const finalStrikeFrame = new Frame(10,2,2);
+        const finalStrikeFrame = new Frame(10, 2, 2);
         bowlingGame.addFrames(finalStrikeFrame)
         const scoreByFrame = (10 + 2 + 2);
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
+    });
+    it('calculates the final frame with all strikes ', () => {
+        const finalStrikeFrame = new Frame(10, 10, 10);
+        bowlingGame.addFrames(finalStrikeFrame)
+        const scoreByFrame = (10 + 10 + 10);
+        expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
+    });
+
+    xit('calculates a perfect game', () => {
+        bowlingGame.addFrames(Frame.strike,
+            Frame.strike, Frame.strike, Frame.strike,
+            Frame.strike, Frame.strike, Frame.strike,
+            Frame.strike, Frame.strike, finalStrikeFrame)
+        expect(bowlingGame.calculateScore()).to.eq(300)
     });
 
     it('calculates a game with two spare', () => {
@@ -152,6 +167,11 @@ describe('bowling game', () => {
         it('a strikes and frame of 6/1', () => {
             bowlingGame.addFrames(Frame.strike, new Frame(6, 1))
             const scoreByFrame = (10 + 10 + 6) + (10 + 6 + 1) + (6 + 1);
+            expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
+        });
+        it('a final frame with all strikes', () => {
+            bowlingGame.addFrames(finalStrikeFrame);
+            const scoreByFrame = (10 + 10 + 10) + (10 + 10 + 10);
             expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
         });
     });
