@@ -37,9 +37,7 @@ export class BowlingGame {
 
     private addNextFrame(previousScore: number, currentFrame: Frame, currentIndex: number) {
         const baseNewScore = previousScore + currentFrame.totalPinCount();
-        if (this.isFinalFrame(currentIndex)) {
-            return baseNewScore
-        }
+        if (this.isFinalFrame(currentIndex)) return baseNewScore
 
         return baseNewScore + this.bonusScoreFor(currentFrame, currentIndex);
     }
@@ -54,9 +52,8 @@ export class BowlingGame {
     }
 
     private spareBonusScore(frame: Frame, currentIndex: number) {
-        if (!frame.isSpare()) {
-            return 0;
-        }
+        if (!frame.isSpare()) return 0;
+
         return this.frames[currentIndex + 1].totalOfNextRoll();
     }
 
