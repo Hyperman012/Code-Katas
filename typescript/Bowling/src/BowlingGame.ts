@@ -30,8 +30,19 @@ export class Frame {
     }
 }
 
+class FrameCollection {
+    constructor(private frames: Frame[]) {
+
+    }
+
+    addFrames(...frames: Frame[]) {
+        this.frames.push(...frames);
+    }
+}
+
 export class BowlingGame {
     private frames: Frame[] = [];
+    private frameCollection: FrameCollection = new FrameCollection([]);
 
     calculateScore(): number {
         return this.frames.reduce((score, frame, currentIndex) => this.addNextFrame(score, frame, currentIndex), 0)
@@ -74,6 +85,7 @@ export class BowlingGame {
 
     addFrames(...frames: Frame[]) {
         this.frames.push(...frames)
+        this.frameCollection.addFrames(...frames);
     }
 
     frameSummary(): Frame[] {
