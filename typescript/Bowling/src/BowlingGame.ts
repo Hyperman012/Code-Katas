@@ -95,8 +95,4 @@ export class BowlingGame {
         this.frames.push(...frames)
         this.frameCollection.addFrames(...frames);
     }
-
-    frameSummary(): Frame[] {
-        return this.frames
-    }
 }
