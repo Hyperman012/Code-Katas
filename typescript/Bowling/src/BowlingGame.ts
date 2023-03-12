@@ -53,11 +53,10 @@ class FrameCollection {
 }
 
 export class BowlingGame {
-    private frames: Frame[] = [];
-    private frameCollection: FrameCollection = new FrameCollection([]);
+    private frames: FrameCollection = new FrameCollection([]);
 
     calculateScore(): number {
-        return this.frameCollection.reduce((score, frame, currentIndex) => this.addNextFrame(score, frame, currentIndex), 0)
+        return this.frames.reduce((score, frame, currentIndex) => this.addNextFrame(score, frame, currentIndex), 0)
     }
 
     private addNextFrame(previousScore: number, currentFrame: Frame, currentIndex: number) {
@@ -68,7 +67,7 @@ export class BowlingGame {
     }
 
     private isFinalFrame(currentIndex: number) {
-        return this.frameCollection.isFinalFrame(currentIndex);
+        return this.frames.isFinalFrame(currentIndex);
     }
 
     private bonusScoreFor(currentFrame: Frame, currentIndex: number) {
@@ -92,11 +91,10 @@ export class BowlingGame {
     }
 
     private getFrame(index: number): Frame {
-        return this.frameCollection.get(index);
+        return this.frames.get(index);
     }
 
     addFrames(...frames: Frame[]) {
-        this.frames.push(...frames)
-        this.frameCollection.addFrames(...frames);
+        this.frames.addFrames(...frames);
     }
 }
