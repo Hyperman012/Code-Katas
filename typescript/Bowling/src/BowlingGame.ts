@@ -1,3 +1,5 @@
+import base = Mocha.reporters.base;
+
 export class Frame {
     static gutter: Frame = new Frame(0, 0)
     static strike: Frame = new Frame(10, 0);
@@ -28,7 +30,15 @@ export class BowlingGame {
 
     private addNextFrame(previousScore: number, currentFrame: Frame, currentIndex: number) {
         const baseNewScore = previousScore + currentFrame.totalPinCount();
+        if (this.isFinalFrame(currentIndex)) {
+            return baseNewScore
+        }
+
         return baseNewScore + this.bonusScoreFor(currentFrame, currentIndex);
+    }
+
+    private isFinalFrame(currentIndex: number) {
+        return (currentIndex + 1) === this.frames.length;
     }
 
 
