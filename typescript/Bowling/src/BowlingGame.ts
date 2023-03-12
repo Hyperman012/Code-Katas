@@ -9,7 +9,7 @@ export class Frame {
     }
 
     totalPinCount(): number {
-        return this.firstRoll + this.secondRoll + this.thirdRoll;
+        return this.totalOfNextTwoRolls() + this.thirdRoll;
     }
 
     isSpare() {
