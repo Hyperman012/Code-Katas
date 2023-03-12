@@ -18,7 +18,6 @@ describe('Frame', () => {
         const frame = new Frame(0, 10);
         expect(frame.totalPinCount()).to.eq(10);
     });
-
     it('spare is a spare', () => {
         const frame = new Frame(0, 10);
         expect(frame.isSpare()).to.be.true;
@@ -42,7 +41,6 @@ describe('Frame', () => {
     it('can have 3 rolls', () => {
         expect(new Frame(9, 1, 2).totalPinCount()).to.eq(12)
     });
-
 });
 
 describe('bowling game', () => {

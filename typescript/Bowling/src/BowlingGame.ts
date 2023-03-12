@@ -12,7 +12,7 @@ export class Frame {
     }
 
     isSpare() {
-        return !this.isStrike() && this.totalPinCount() === 10;
+        return !this.isStrike() && this.totalOfNextTwoRolls() === 10;
     }
 
     isStrike() {
@@ -45,7 +45,6 @@ export class BowlingGame {
     private isFinalFrame(currentIndex: number) {
         return (currentIndex + 1) === this.frames.length;
     }
-
 
     private bonusScoreFor(currentFrame: Frame, currentIndex: number) {
         return this.spareBonusScore(currentFrame, currentIndex) + this.strikeBonusScore(currentFrame, currentIndex);
