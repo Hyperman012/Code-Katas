@@ -39,6 +39,9 @@ describe('Frame', () => {
     it('gutter is not a strike', () => {
         expect(Frame.gutter.isStrike()).to.be.false;
     });
+    it('can have 3 rolls', () => {
+        expect(new Frame(9,1,2).totalPinCount()).to.eq(12)
+    });
 
 });
 

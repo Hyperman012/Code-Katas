@@ -2,12 +2,12 @@ export class Frame {
     static gutter: Frame = new Frame(0, 0)
     static strike: Frame = new Frame(10, 0);
 
-    constructor(public firstRoll: number, private secondRoll: number) {
+    constructor(public firstRoll: number, private secondRoll: number, private thirdRoll: number = 0) {
 
     }
 
     totalPinCount(): number {
-        return this.firstRoll + this.secondRoll;
+        return this.firstRoll + this.secondRoll + this.thirdRoll;
     }
 
     isSpare() {
