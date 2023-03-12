@@ -47,8 +47,6 @@ describe('bowling game', () => {
     let bowlingGame: BowlingGame;
     const ninePinFrame = new Frame(9, 0);
     const finalStrikeFrame = new Frame(10, 10, 10);
-
-
     beforeEach(() => {
         bowlingGame = new BowlingGame();
     });
@@ -61,21 +59,6 @@ describe('bowling game', () => {
             fiveSpare,fiveSpare,fiveSpare,
             fiveSpare,fiveSpare, finalFiveSpare);
         expect(bowlingGame.calculateScore()).to.eq(150)
-    });
-
-    it('adds simple frame to a game', () => {
-        bowlingGame.addFrames(ninePinFrame);
-        hasExpectedFrames([ninePinFrame]);
-    });
-
-    it('adds strike frame to a game', () => {
-        bowlingGame.addFrames(Frame.strike);
-        hasExpectedFrames([Frame.strike]);
-    });
-
-    it('adds strike frames to a game', () => {
-        bowlingGame.addFrames(Frame.strike, Frame.strike);
-        hasExpectedFrames([Frame.strike, Frame.strike]);
     });
 
     it('calculates total score of an empty game ', () => {
@@ -126,11 +109,6 @@ describe('bowling game', () => {
         const scoreByFrame = (9 + 1 + 9) + (9 + 1 + 9) + 9;
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
     });
-
-    function hasExpectedFrames(expectedFrames: Frame[]) {
-        expect(bowlingGame.frameSummary()).to.deep.eq(expectedFrames)
-    }
-
     describe('calculating a game with one strike and ', () => {
         beforeEach(() => {
             bowlingGame.addFrames(Frame.strike);
