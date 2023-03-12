@@ -38,6 +38,14 @@ class FrameCollection {
     addFrames(...frames: Frame[]) {
         this.frames.push(...frames);
     }
+
+    isFinalFrame(currentIndex: number) {
+        return (currentIndex + 1) === this.frames.length;
+    }
+
+    get(index: number): Frame {
+        return this.frames[index];
+    }
 }
 
 export class BowlingGame {
@@ -56,7 +64,7 @@ export class BowlingGame {
     }
 
     private isFinalFrame(currentIndex: number) {
-        return (currentIndex + 1) === this.frames.length;
+        return this.frameCollection.isFinalFrame(currentIndex);
     }
 
     private bonusScoreFor(currentFrame: Frame, currentIndex: number) {
@@ -66,7 +74,7 @@ export class BowlingGame {
     private spareBonusScore(frame: Frame, currentIndex: number) {
         if (!frame.isSpare()) return 0;
 
-        return this.frames[currentIndex + 1].totalOfNextRoll();
+        return this.getFrame(currentIndex + 1).totalOfNextRoll();
     }
 
     private strikeBonusScore(frame: Frame, currentIndex: number): number {
@@ -80,7 +88,7 @@ export class BowlingGame {
     }
 
     private getFrame(index: number): Frame {
-        return this.frames[index];
+        return this.frameCollection.get(index);
     }
 
     addFrames(...frames: Frame[]) {
