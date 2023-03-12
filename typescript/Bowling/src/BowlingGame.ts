@@ -1,4 +1,4 @@
-import base = Mocha.reporters.base;
+const STRIKE_PIN_COUNT = 10;
 
 export class Frame {
     static gutter: Frame = new Frame(0, 0)
@@ -11,12 +11,14 @@ export class Frame {
         return this.totalOfNextTwoRolls() + this.thirdRoll;
     }
 
+
     isSpare() {
-        return !this.isStrike() && this.totalOfNextTwoRolls() === 10;
+        return !this.isStrike()
+            && this.totalOfNextTwoRolls() === STRIKE_PIN_COUNT;
     }
 
     isStrike() {
-        return this.firstRoll === 10;
+        return this.firstRoll === STRIKE_PIN_COUNT;
     }
 
     totalOfNextTwoRolls() {
