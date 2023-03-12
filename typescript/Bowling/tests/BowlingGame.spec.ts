@@ -50,8 +50,19 @@ describe('bowling game', () => {
     const ninePinFrame = new Frame(9, 0);
     const finalStrikeFrame = new Frame(10, 10, 10);
 
+
     beforeEach(() => {
         bowlingGame = new BowlingGame();
+    });
+
+    it('calculates a game of all spares', () => {
+        const fiveSpare = new Frame(5, 5)
+        const finalFiveSpare = new Frame(5, 5, 5)
+        bowlingGame.addFrames(fiveSpare,
+            fiveSpare,fiveSpare,fiveSpare,
+            fiveSpare,fiveSpare,fiveSpare,
+            fiveSpare,fiveSpare, finalFiveSpare);
+        expect(bowlingGame.calculateScore()).to.eq(150)
     });
 
     it('adds simple frame to a game', () => {
@@ -103,7 +114,7 @@ describe('bowling game', () => {
         expect(bowlingGame.calculateScore()).to.eq(scoreByFrame)
     });
 
-    xit('calculates a perfect game', () => {
+    it('calculates a perfect game', () => {
         bowlingGame.addFrames(Frame.strike,
             Frame.strike, Frame.strike, Frame.strike,
             Frame.strike, Frame.strike, Frame.strike,
