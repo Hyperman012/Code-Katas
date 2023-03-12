@@ -47,8 +47,8 @@ class FrameCollection {
         return this.frames[index];
     }
 
-    reduce(callback: (score: number, frame: Frame, currentIndex:number) => number, initialValue: number) {
-        return this.frames.reduce(callback, initialValue)
+    reduce(callback: (score: number, frame: Frame, currentIndex: number) => number) {
+        return this.frames.reduce(callback, 0)
     }
 }
 
@@ -56,7 +56,7 @@ export class BowlingGame {
     private frames: FrameCollection = new FrameCollection([]);
 
     calculateScore(): number {
-        return this.frames.reduce((score, frame, currentIndex) => this.addNextFrame(score, frame, currentIndex), 0)
+        return this.frames.reduce((score, frame, currentIndex) => this.addNextFrame(score, frame, currentIndex))
     }
 
     private addNextFrame(previousScore: number, currentFrame: Frame, currentIndex: number) {
