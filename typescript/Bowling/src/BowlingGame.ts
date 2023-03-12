@@ -4,8 +4,7 @@ export class Frame {
     static gutter: Frame = new Frame(0, 0)
     static strike: Frame = new Frame(10, 0);
 
-    constructor(public firstRoll: number, private secondRoll: number, private thirdRoll: number = 0) {
-
+    constructor(private firstRoll: number, private secondRoll: number, private thirdRoll: number = 0) {
     }
 
     totalPinCount(): number {
@@ -22,6 +21,10 @@ export class Frame {
 
     totalOfNextTwoRolls() {
         return this.firstRoll + this.secondRoll;
+    }
+
+    totalOfNextRoll() {
+        return this.firstRoll;
     }
 }
 
@@ -54,7 +57,7 @@ export class BowlingGame {
         if (!frame.isSpare()) {
             return 0;
         }
-        return this.frames[currentIndex + 1].firstRoll;
+        return this.frames[currentIndex + 1].totalOfNextRoll();
     }
 
     private strikeBonusScore(frame: Frame, currentIndex: number): number {
@@ -64,7 +67,7 @@ export class BowlingGame {
         if (!nextFrame.isStrike() || this.isFinalFrame(currentIndex + 1)) return nextFrame.totalOfNextTwoRolls()
 
         const frameAfterNext = this.getFrame(currentIndex + 2);
-        return nextFrame.totalPinCount() + frameAfterNext.firstRoll
+        return nextFrame.totalPinCount() + frameAfterNext.totalOfNextRoll()
     }
 
     private getFrame(index: number): Frame {
