@@ -1,8 +1,10 @@
 export const firstRow = [1];
 export const secondRow = [1, 1];
 
-export function generateTriangle(rowCount: number): number[][] {
-    const triangle: number[][] = [];
+export type Triangle = number[][];
+
+export function generateTriangle(rowCount: number): Triangle {
+    const triangle: Triangle = [];
 
     if (rowCount === 2) return [firstRow, secondRow];
 

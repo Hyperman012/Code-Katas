@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import "mocha";
 
-import { firstRow, generateTriangle, secondRow } from "../src";
+import { firstRow, generateTriangle, Triangle, secondRow } from "../src";
 
 describe("Pascal's Triangle", () => {
     it("Produces an empty list for 0", () => {
@@ -21,6 +21,6 @@ describe("Pascal's Triangle", () => {
     });
 });
 
-function expectCorrectTriangle(rowCount: number, expectedTriangle: number[][]) {
+function expectCorrectTriangle(rowCount: number, expectedTriangle: Triangle) {
     expect(generateTriangle(rowCount)).to.deep.eq(expectedTriangle);
 }
