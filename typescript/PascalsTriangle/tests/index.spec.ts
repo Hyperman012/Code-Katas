@@ -10,4 +10,7 @@ describe("Pascal's Triangle", () => {
     it("Produces first row for number of rows 1", () => {
         expect(generateTriangle(1)).to.deep.eq([[1]]);
     });
+    it("produces expected rows for input of 2", () => {
+        expect(generateTriangle(2)).to.deep.eq([[1], [1, 1]]);
+    });
 });
