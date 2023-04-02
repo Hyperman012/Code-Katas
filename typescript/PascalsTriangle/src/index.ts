@@ -11,13 +11,18 @@ export function generateTriangle(rowCount: number): Triangle {
 
     if (rowCount >= 3) triangle.push([1, triangle[1][0] + triangle[1][1], 1]);
 
-    if (rowCount === 4)
-        triangle.push([
-            1,
-            triangle[2][0] + triangle[2][1],
-            triangle[2][1] + triangle[2][2],
-            1,
-        ]);
+    if (rowCount === 4) {
+        const previousRow = triangle[2];
+        triangle.push(createNextRow(previousRow));
+    }
 
     return triangle;
+}
+function createNextRow(previousRow: number[]) {
+    return [
+        1,
+        previousRow[0] + previousRow[1],
+        previousRow[1] + previousRow[2],
+        1,
+    ];
 }
