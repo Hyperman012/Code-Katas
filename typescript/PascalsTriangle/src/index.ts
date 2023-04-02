@@ -19,10 +19,10 @@ export function generateTriangle(rowCount: number): Triangle {
     return triangle;
 }
 export function createNextRow(previousRow: number[]) {
-    return [
-        1,
-        previousRow[0] + previousRow[1],
-        previousRow[1] + previousRow[2],
-        1,
-    ];
+    const row = [1];
+    for (let i = 1; i < previousRow.length; i++) {
+        row.push(previousRow[i - 1] + previousRow[i]);
+    }
+    row.push(1);
+    return row;
 }

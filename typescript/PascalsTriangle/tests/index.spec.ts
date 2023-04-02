@@ -14,6 +14,10 @@ describe("Pascal's Triangle", () => {
         it("creates 4th row from 3rd", () => {
             expect(createNextRow([1, 2, 1])).to.deep.eq([1, 3, 3, 1]);
         });
+
+        it("creates 3rd row from 2nd", () => {
+            expect(createNextRow([1, 1])).to.deep.eq([1, 2, 1]);
+        });
     });
     it("Produces an empty list for 0", () => {
         expectCorrectTriangle(0, []);
