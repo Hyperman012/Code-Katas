@@ -7,11 +7,17 @@ describe("Pascal's Triangle", () => {
     it("Produces an empty list for 0", () => {
         expectCorrectTriangle(0, []);
     });
+
     it("Produces first row for number of rows 1", () => {
         expectCorrectTriangle(1, [firstRow]);
     });
+
     it("produces expected rows for input of 2", () => {
         expectCorrectTriangle(2, [firstRow, secondRow]);
+    });
+
+    it("produces third row", () => {
+        expectCorrectTriangle(3, [firstRow, secondRow, [1, 0, 1]]);
     });
 });
 
