@@ -19,6 +19,15 @@ describe("Pascal's Triangle", () => {
     it("produces third row", () => {
         expectCorrectTriangle(3, [firstRow, secondRow, [1, 2, 1]]);
     });
+
+    it("produces fourth row", () => {
+        expectCorrectTriangle(4, [
+            firstRow,
+            secondRow,
+            [1, 2, 1],
+            [1, 3, 3, 1],
+        ]);
+    });
 });
 
 function expectCorrectTriangle(rowCount: number, expectedTriangle: Triangle) {
