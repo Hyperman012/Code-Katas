@@ -20,8 +20,8 @@ export function generateTriangle(rowCount: number): Triangle {
 }
 export function createNextRow(previousRow: number[]) {
     const row = [1];
-    for (let i = 1; i < previousRow.length; i++) {
-        row.push(previousRow[i - 1] + previousRow[i]);
+    for (let i = 0; i < previousRow.length - 1; i++) {
+        row.push(previousRow[i] + previousRow[i + 1]);
     }
     row.push(1);
     return row;
