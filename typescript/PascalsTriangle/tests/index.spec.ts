@@ -17,7 +17,7 @@ describe("Pascal's Triangle", () => {
     });
 
     it("produces third row", () => {
-        expectCorrectTriangle(3, [firstRow, secondRow, [1, 0, 1]]);
+        expectCorrectTriangle(3, [firstRow, secondRow, [1, 2, 1]]);
     });
 });
 
