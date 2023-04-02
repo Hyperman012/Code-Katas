@@ -1,9 +1,20 @@
 import { expect } from "chai";
 import "mocha";
 
-import { firstRow, generateTriangle, Triangle, secondRow } from "../src";
+import {
+    firstRow,
+    generateTriangle,
+    Triangle,
+    secondRow,
+    createNextRow,
+} from "../src";
 
 describe("Pascal's Triangle", () => {
+    describe("createNextRow", () => {
+        it("creates 4th row from 3rd", () => {
+            expect(createNextRow([1, 2, 1])).to.deep.eq([1, 3, 3, 1]);
+        });
+    });
     it("Produces an empty list for 0", () => {
         expectCorrectTriangle(0, []);
     });

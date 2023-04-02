@@ -18,7 +18,7 @@ export function generateTriangle(rowCount: number): Triangle {
 
     return triangle;
 }
-function createNextRow(previousRow: number[]) {
+export function createNextRow(previousRow: number[]) {
     return [
         1,
         previousRow[0] + previousRow[1],
