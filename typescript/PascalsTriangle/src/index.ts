@@ -9,11 +9,10 @@ export function generateTriangle(rowCount: number): Triangle {
     if (rowCount >= 1) triangle.push(firstRow);
     if (rowCount >= 2) triangle.push(secondRow);
 
-    if (rowCount >= 3) triangle.push([1, triangle[1][0] + triangle[1][1], 1]);
+    if (rowCount >= 3) triangle.push(createNextRow(triangle[1]));
 
     if (rowCount === 4) {
-        const previousRow = triangle[2];
-        triangle.push(createNextRow(previousRow));
+        triangle.push(createNextRow(triangle[2]));
     }
 
     return triangle;
