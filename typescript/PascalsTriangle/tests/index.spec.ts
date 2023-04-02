@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import "mocha";
 
-import { firstRow, generateTriangle } from "../src";
+import { firstRow, generateTriangle, secondRow } from "../src";
 
 describe("Pascal's Triangle", () => {
     it("Produces an empty list for 0", () => {
@@ -11,6 +11,6 @@ describe("Pascal's Triangle", () => {
         expect(generateTriangle(1)).to.deep.eq([firstRow]);
     });
     it("produces expected rows for input of 2", () => {
-        expect(generateTriangle(2)).to.deep.eq([firstRow, [1, 1]]);
+        expect(generateTriangle(2)).to.deep.eq([firstRow, secondRow]);
     });
 });
