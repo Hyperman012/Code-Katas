@@ -9,7 +9,7 @@ export function generateTriangle(rowCount: number): Triangle {
     if (rowCount >= 1) triangle.push(firstRow);
     if (rowCount >= 2) triangle.push(secondRow);
 
-    if (rowCount >= 3) triangle.push([1, secondRow[0] + secondRow[1], 1]);
+    if (rowCount >= 3) triangle.push([1, triangle[1][0] + triangle[1][1], 1]);
 
     if (rowCount === 4)
         triangle.push([
