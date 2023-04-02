@@ -1,4 +1,4 @@
-const firstRow = [1];
+export const firstRow = [1];
 
 export function generateTriangle(rowCount: number): number[][] {
     if (rowCount === 0) return [];
