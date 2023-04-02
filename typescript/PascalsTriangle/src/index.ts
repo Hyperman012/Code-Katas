@@ -8,10 +8,10 @@ export function generateTriangle(rowCount: number): Triangle {
 
     if (rowCount === 1) triangle.push(firstRow);
 
-    if (rowCount === 2) return [firstRow, secondRow];
+    if (rowCount === 2) triangle.push(firstRow, secondRow);
 
     if (rowCount === 3)
-        return [firstRow, secondRow, [1, secondRow[0] + secondRow[1], 1]];
+        triangle.push(firstRow, secondRow, [1, secondRow[0] + secondRow[1], 1]);
 
     return triangle;
 }
