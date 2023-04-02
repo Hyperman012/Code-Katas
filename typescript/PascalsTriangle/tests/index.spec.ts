@@ -1,10 +1,10 @@
 import { expect } from "chai";
 import "mocha";
 
-import { add } from "../src";
+import { generateTriangle } from "../src";
 
-describe("test", () => {
-    it("adds 1 + 2", () => {
-        expect(add(1, 2)).to.eq(3);
+describe("Pascal's Triangle", () => {
+    it("Produces an empty list for 0", () => {
+        expect(generateTriangle(0)).to.deep.eq([]);
     });
 });
