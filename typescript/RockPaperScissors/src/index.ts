@@ -1,9 +1,12 @@
 export class Round {
-    constructor(private ourShape: Shape, private opponentShape: Shape) {}
+    constructor(
+        private ourShape: HandShape,
+        private opponentShape: HandShape
+    ) {}
     private shapeScoreMap = {
-        [Shape.Rock]: 1,
-        [Shape.Paper]: 2,
-        [Shape.Scissors]: 3,
+        [HandShape.Rock]: 1,
+        [HandShape.Paper]: 2,
+        [HandShape.Scissors]: 3,
     };
     ourShapeScore(): number {
         return this.shapeScoreMap[this.ourShape];
@@ -11,8 +14,8 @@ export class Round {
 
     totalScore() {
         if (
-            this.opponentShape === Shape.Paper &&
-            this.ourShape === Shape.Scissors
+            this.opponentShape === HandShape.Paper &&
+            this.ourShape === HandShape.Scissors
         ) {
             return 9;
         }
@@ -24,20 +27,20 @@ export class Round {
     }
 }
 
-export enum Shape {
+export enum HandShape {
     Rock = "Rock",
     Paper = "Paper",
     Scissors = "Scissors",
 }
 
-export class ShapeClass {
+export class Shape {
     private shapeScoreMap = {
-        [Shape.Rock]: 1,
-        [Shape.Paper]: 2,
-        [Shape.Scissors]: 3,
+        [HandShape.Rock]: 1,
+        [HandShape.Paper]: 2,
+        [HandShape.Scissors]: 3,
     };
 
-    constructor(private shape: Shape) {}
+    constructor(private shape: HandShape) {}
 
     score() {
         return this.shapeScoreMap[this.shape];
