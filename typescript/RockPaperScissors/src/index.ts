@@ -42,4 +42,8 @@ export class ShapeClass {
     score() {
         return this.shapeScoreMap[this.shape];
     }
+
+    isPaper() {
+        return false;
+    }
 }

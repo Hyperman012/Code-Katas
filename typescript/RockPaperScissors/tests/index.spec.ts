@@ -13,6 +13,10 @@ describe("Rock Paper Scissors", () => {
         });
     });
 
+    xit("is paper shape", () => {
+        expect(new ShapeClass(Shape.Paper).isPaper()).to.be.true;
+    });
+
     [
         { score: 3, ourShape: Shape.Scissors, opponentShape: Shape.Rock },
         { score: 6, ourShape: Shape.Scissors, opponentShape: Shape.Scissors },
