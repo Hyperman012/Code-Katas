@@ -9,7 +9,7 @@ export class Round {
 }
 
 export enum Shape {
-    Rock,
-    Paper,
-    Scissors,
+    Rock = "Rock",
+    Paper = "Paper",
+    Scissors = "Scissors",
 }

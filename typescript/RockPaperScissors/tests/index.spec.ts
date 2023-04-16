@@ -3,13 +3,11 @@ import "mocha";
 import { Round, Shape } from "../src";
 
 describe("Rock Paper Scissors", () => {
-    it("returns 1 for choosing rock", () => {
-        expect(new Round(Shape.Rock).score()).to.eq(1);
-    });
-    it("returns 2 for choosing paper", () => {
-        expect(new Round(Shape.Paper).score()).to.eq(2);
-    });
-    [{ score: 3, shape: Shape.Scissors }].forEach(({ score, shape }) => {
+    [
+        { score: 3, shape: Shape.Scissors },
+        { score: 2, shape: Shape.Paper },
+        { score: 1, shape: Shape.Rock },
+    ].forEach(({ score, shape }) => {
         it(`returns ${score} for choosing ${shape}`, () => {
             expect(new Round(shape).score()).to.eq(score);
         });
