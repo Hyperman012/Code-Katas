@@ -29,3 +29,17 @@ export enum Shape {
     Paper = "Paper",
     Scissors = "Scissors",
 }
+
+export class ShapeClass {
+    private shapeScoreMap = {
+        [Shape.Rock]: 1,
+        [Shape.Paper]: 2,
+        [Shape.Scissors]: 3,
+    };
+
+    constructor(private shape: Shape) {}
+
+    score() {
+        return this.shapeScoreMap[this.shape];
+    }
+}

@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import "mocha";
-import { Round, Shape } from "../src";
+import { Round, Shape, ShapeClass } from "../src";
 
 describe("Rock Paper Scissors", () => {
     [
@@ -9,7 +9,7 @@ describe("Rock Paper Scissors", () => {
         { score: 1, shape: Shape.Rock },
     ].forEach(({ score, shape }) => {
         it(`returns ${score} for choosing ${shape}`, () => {
-            expect(new Round(shape, Shape.Rock).ourShapeScore()).to.eq(score);
+            expect(new ShapeClass(shape).score()).to.eq(score);
         });
     });
 
