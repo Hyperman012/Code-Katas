@@ -1,5 +1,5 @@
 export class Round {
-    constructor(private ourShape: Shape) {}
+    constructor(private ourShape: Shape, private opponentShape: Shape) {}
     private shapeScoreMap = {
         [Shape.Rock]: 1,
         [Shape.Paper]: 2,
@@ -10,6 +10,9 @@ export class Round {
     }
 
     totalScore() {
+        if (this.opponentShape === this.ourShape) {
+            return this.ourShapeScore() + 3;
+        }
         return this.ourShapeScore();
     }
 }

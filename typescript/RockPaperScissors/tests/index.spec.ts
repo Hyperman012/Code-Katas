@@ -9,15 +9,18 @@ describe("Rock Paper Scissors", () => {
         { score: 1, shape: Shape.Rock },
     ].forEach(({ score, shape }) => {
         it(`returns ${score} for choosing ${shape}`, () => {
-            expect(new Round(shape).ourShapeScore()).to.eq(score);
+            expect(new Round(shape, Shape.Rock).ourShapeScore()).to.eq(score);
         });
     });
 
-    [{ score: 3, ourShape: Shape.Scissors, opponentShape: Shape.Rock }].forEach(
-        ({ score, ourShape, opponentShape }) => {
-            it(`returns ${score} for choosing ${ourShape} and opponent choosing ${opponentShape}`, () => {
-                expect(new Round(ourShape).totalScore()).to.eq(score);
-            });
-        }
-    );
+    [
+        { score: 3, ourShape: Shape.Scissors, opponentShape: Shape.Rock },
+        { score: 6, ourShape: Shape.Scissors, opponentShape: Shape.Scissors },
+    ].forEach(({ score, ourShape, opponentShape }) => {
+        it(`returns ${score} for choosing ${ourShape} and opponent choosing ${opponentShape}`, () => {
+            expect(new Round(ourShape, opponentShape).totalScore()).to.eq(
+                score
+            );
+        });
+    });
 });
