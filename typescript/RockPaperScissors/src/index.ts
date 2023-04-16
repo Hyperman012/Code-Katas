@@ -1,3 +1,5 @@
-export function add(input: number, secondInput: number): number {
-    return input + secondInput;
+export class Round {
+    score(): number {
+        return 1;
+    }
 }

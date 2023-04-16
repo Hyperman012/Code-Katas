@@ -1,9 +1,9 @@
 import { expect } from "chai";
 import "mocha";
-import { add } from "../src";
+import { Round } from "../src";
 
 describe("default", () => {
-    it("adds", () => {
-        expect(add(1, 1)).to.eq(2);
+    it("returns 1 for choosing rock", () => {
+        expect(new Round().score()).to.eq(1);
     });
 });
