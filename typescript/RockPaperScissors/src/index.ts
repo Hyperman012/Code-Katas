@@ -8,6 +8,10 @@ export class Round {
     ourShapeScore(): number {
         return this.shapeScoreMap[this.ourShape];
     }
+
+    totalScore() {
+        return this.ourShapeScore();
+    }
 }
 
 export enum Shape {
