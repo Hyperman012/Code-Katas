@@ -9,4 +9,9 @@ describe("Rock Paper Scissors", () => {
     it("returns 2 for choosing paper", () => {
         expect(new Round(Shape.Paper).score()).to.eq(2);
     });
+    [{ score: 3, shape: Shape.Scissors }].forEach(({ score, shape }) => {
+        it(`returns ${score} for choosing ${shape}`, () => {
+            expect(new Round(shape).score()).to.eq(score);
+        });
+    });
 });
