@@ -1,10 +1,12 @@
 export class Round {
     constructor(private ourShape: Shape) {}
-
+    private shapeScoreMap = {
+        [Shape.Rock]: 1,
+        [Shape.Paper]: 2,
+        [Shape.Scissors]: 3,
+    };
     score(): number {
-        if (this.ourShape === Shape.Scissors) return 3;
-        if (this.ourShape === Shape.Paper) return 2;
-        return 1;
+        return this.shapeScoreMap[this.ourShape];
     }
 }
 
