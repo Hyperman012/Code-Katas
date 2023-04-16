@@ -5,7 +5,7 @@ export class Round {
         [Shape.Paper]: 2,
         [Shape.Scissors]: 3,
     };
-    score(): number {
+    ourShapeScore(): number {
         return this.shapeScoreMap[this.ourShape];
     }
 }
