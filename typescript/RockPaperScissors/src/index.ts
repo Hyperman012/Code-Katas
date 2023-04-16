@@ -10,6 +10,13 @@ export class Round {
     }
 
     totalScore() {
+        if (
+            this.opponentShape === Shape.Paper &&
+            this.ourShape === Shape.Scissors
+        ) {
+            return 9;
+        }
+
         if (this.opponentShape === this.ourShape) {
             return this.ourShapeScore() + 3;
         }
