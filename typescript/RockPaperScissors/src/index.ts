@@ -22,6 +22,14 @@ export class Round {
     }
 }
 
+export class RoundRules {
+    constructor(private shape1: Shape, private shape2: Shape) {}
+
+    isTie() {
+        return this.shape1.equals(this.shape2);
+    }
+}
+
 export enum HandShape {
     Rock = "Rock",
     Paper = "Paper",
