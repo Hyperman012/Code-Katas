@@ -2,8 +2,8 @@ export class Round {
     constructor(
         private ourShape: HandShape,
         private opponentShape: HandShape,
-        private shape: Shape,
-        private shape1: Shape
+        private ourNewShape: Shape,
+        private opponentNewShape: Shape
     ) {}
     private shapeScoreMap = {
         [HandShape.Rock]: 1,
@@ -11,7 +11,7 @@ export class Round {
         [HandShape.Scissors]: 3,
     };
     ourShapeScore(): number {
-        return this.shapeScoreMap[this.ourShape];
+        return this.ourNewShape.score();
     }
 
     totalScore() {
