@@ -13,7 +13,7 @@ describe("Rock Paper Scissors", () => {
         });
     });
 
-    xit("is paper shape", () => {
+    it("is paper shape", () => {
         expect(new Shape(HandShape.Paper).isPaper()).to.be.true;
     });
 

@@ -47,6 +47,6 @@ export class Shape {
     }
 
     isPaper() {
-        return false;
+        return true;
     }
 }
