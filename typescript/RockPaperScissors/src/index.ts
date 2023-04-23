@@ -47,6 +47,6 @@ export class Shape {
     }
 
     isPaper() {
-        return true;
+        return this.shape === HandShape.Paper;
     }
 }
