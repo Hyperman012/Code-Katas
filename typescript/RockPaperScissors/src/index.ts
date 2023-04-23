@@ -18,16 +18,18 @@ export class Round {
     }
 
     private isTie() {
-        return new RoundRules(this.opponentShape, this.ourShape).isTie();
+        return new RoundRules(this.ourShape, this.opponentShape).isTie();
     }
 }
 
 export class RoundRules {
-    constructor(private shape1: Shape, private shape2: Shape) {}
+    constructor(private ourShape: Shape, private opponentShape: Shape) {}
 
     isTie() {
-        return this.shape1.equals(this.shape2);
+        return this.ourShape.equals(this.opponentShape);
     }
+
+    weWin() {}
 }
 
 export enum HandShape {
