@@ -5,15 +5,6 @@ export class Round {
         private ourNewShape: Shape,
         private opponentNewShape: Shape
     ) {}
-    private shapeScoreMap = {
-        [HandShape.Rock]: 1,
-        [HandShape.Paper]: 2,
-        [HandShape.Scissors]: 3,
-    };
-    ourShapeScore(): number {
-        return this.ourNewShape.score();
-    }
-
     totalScore() {
         if (
             this.opponentShape === HandShape.Paper &&
@@ -23,9 +14,9 @@ export class Round {
         }
 
         if (this.opponentShape === this.ourShape) {
-            return this.ourShapeScore() + 3;
+            return this.ourNewShape.score() + 3;
         }
-        return this.ourShapeScore();
+        return this.ourNewShape.score();
     }
 }
 
