@@ -19,10 +19,14 @@ describe("Rock Paper Scissors", () => {
         expect(paper.isRock()).to.be.false;
     });
     it("is rock shape", () => {
-        expect(new Shape(HandShape.Rock).isPaper()).to.be.false;
+        const rock = new Shape(HandShape.Rock);
+        expect(rock.isPaper()).to.be.false;
+        expect(rock.isRock()).to.be.true;
     });
     it("is scissors shape", () => {
-        expect(new Shape(HandShape.Scissors).isPaper()).to.be.false;
+        const scissors = new Shape(HandShape.Scissors);
+        expect(scissors.isPaper()).to.be.false;
+        expect(scissors.isRock()).to.be.false;
     });
 
     [

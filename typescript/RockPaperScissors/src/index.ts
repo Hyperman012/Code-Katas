@@ -51,6 +51,6 @@ export class Shape {
     }
 
     isRock() {
-        return false;
+        return this.shape === HandShape.Rock;
     }
 }
