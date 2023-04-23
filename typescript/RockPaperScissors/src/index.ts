@@ -1,23 +1,19 @@
 export class Round {
-    constructor(
-        private ourShape: HandShape,
-        private opponentShape: HandShape,
-        private ourNewShape: Shape,
-        private opponentNewShape: Shape
-    ) {}
+    constructor(private ourShape: Shape, private opponentShape: Shape) {}
+
     totalScore() {
-        if (this.opponentNewShape.isPaper() && this.ourNewShape.isScissors()) {
+        if (this.opponentShape.isPaper() && this.ourShape.isScissors()) {
             return 9;
         }
 
         if (this.isTie()) {
-            return this.ourNewShape.score() + 3;
+            return this.ourShape.score() + 3;
         }
-        return this.ourNewShape.score();
+        return this.ourShape.score();
     }
 
     private isTie() {
-        return this.opponentNewShape.equals(this.ourNewShape);
+        return this.opponentShape.equals(this.ourShape);
     }
 }
 
