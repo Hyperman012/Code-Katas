@@ -6,10 +6,7 @@ export class Round {
         private opponentNewShape: Shape
     ) {}
     totalScore() {
-        if (
-            this.opponentShape === HandShape.Paper &&
-            this.ourShape === HandShape.Scissors
-        ) {
+        if (this.opponentNewShape.isPaper() && this.ourNewShape.isScissors()) {
             return 9;
         }
 
