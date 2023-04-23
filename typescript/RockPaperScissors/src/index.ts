@@ -50,4 +50,8 @@ export class Shape {
     isScissors() {
         return this.shape === HandShape.Scissors;
     }
+
+    equals(rock: Shape) {
+        return true;
+    }
 }
