@@ -18,7 +18,7 @@ export class Round {
     }
 
     private isTie() {
-        return this.opponentShape.equals(this.ourShape);
+        return new RoundRules(this.opponentShape, this.ourShape).isTie();
     }
 }
 
