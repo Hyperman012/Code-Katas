@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import "mocha";
-import { Round, HandShape, Shape, RoundRules } from "../src";
+import { Round, RoundRules } from "../src";
+import { HandShape, Shape } from "../src/Shape";
 
 describe("Rock Paper Scissors", () => {
     describe("Shape", () => {
