@@ -1,7 +1,9 @@
 export class Round {
     constructor(
         private ourShape: HandShape,
-        private opponentShape: HandShape
+        private opponentShape: HandShape,
+        private shape: Shape,
+        private shape1: Shape
     ) {}
     private shapeScoreMap = {
         [HandShape.Rock]: 1,

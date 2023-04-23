@@ -50,9 +50,14 @@ describe("Rock Paper Scissors", () => {
         },
     ].forEach(({ score, ourShape, opponentShape }) => {
         it(`returns ${score} for choosing ${ourShape} and opponent choosing ${opponentShape}`, () => {
-            expect(new Round(ourShape, opponentShape).totalScore()).to.eq(
-                score
-            );
+            expect(
+                new Round(
+                    ourShape,
+                    opponentShape,
+                    new Shape(ourShape),
+                    new Shape(opponentShape)
+                ).totalScore()
+            ).to.eq(score);
         });
     });
 });
