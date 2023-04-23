@@ -53,4 +53,8 @@ export class Shape {
     isRock() {
         return this.shape === HandShape.Rock;
     }
+
+    isScissors() {
+        return this.shape === HandShape.Scissors;
+    }
 }
