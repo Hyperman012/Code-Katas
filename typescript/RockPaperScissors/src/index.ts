@@ -10,10 +10,14 @@ export class Round {
             return 9;
         }
 
-        if (this.opponentShape === this.ourShape) {
+        if (this.isTie()) {
             return this.ourNewShape.score() + 3;
         }
         return this.ourNewShape.score();
+    }
+
+    private isTie() {
+        return this.opponentNewShape.equals(this.ourNewShape);
     }
 }
 
