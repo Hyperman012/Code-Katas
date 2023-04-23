@@ -29,9 +29,9 @@ export class Shape {
         [HandShape.Paper]: 2,
         [HandShape.Scissors]: 3,
     };
-    static scissors = new Shape(HandShape.Scissors);
-    static rock = new Shape(HandShape.Rock);
-    static paper = new Shape(HandShape.Paper);
+    static Scissors = new Shape(HandShape.Scissors);
+    static Rock = new Shape(HandShape.Rock);
+    static Paper = new Shape(HandShape.Paper);
 
     constructor(private shape: HandShape) {}
 

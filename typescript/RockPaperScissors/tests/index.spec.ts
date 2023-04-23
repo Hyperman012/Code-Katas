@@ -14,44 +14,44 @@ describe("Rock Paper Scissors", () => {
     });
 
     it("is paper shape", () => {
-        const paper = Shape.paper;
+        const paper = Shape.Paper;
         expect(paper.isPaper()).to.be.true;
         expect(paper.isRock()).to.be.false;
         expect(paper.isScissors()).to.be.false;
     });
     it("is rock shape", () => {
-        const rock = Shape.rock;
+        const rock = Shape.Rock;
         expect(rock.isPaper()).to.be.false;
         expect(rock.isRock()).to.be.true;
         expect(rock.isScissors()).to.be.false;
     });
     it("is scissors shape", () => {
-        const scissors = Shape.scissors;
+        const scissors = Shape.Scissors;
         expect(scissors.isPaper()).to.be.false;
         expect(scissors.isRock()).to.be.false;
         expect(scissors.isScissors()).to.be.true;
     });
     it("determines equality", () => {
-        expect(Shape.rock.equals(Shape.rock)).to.be.true;
-        expect(Shape.rock.equals(Shape.paper)).to.be.false;
-        expect(Shape.rock.equals(Shape.scissors)).to.be.false;
+        expect(Shape.Rock.equals(Shape.Rock)).to.be.true;
+        expect(Shape.Rock.equals(Shape.Paper)).to.be.false;
+        expect(Shape.Rock.equals(Shape.Scissors)).to.be.false;
     });
 
     [
         {
             score: 3,
-            ourShape: Shape.scissors,
-            opponentShape: Shape.rock,
+            ourShape: Shape.Scissors,
+            opponentShape: Shape.Rock,
         },
         {
             score: 6,
-            ourShape: Shape.scissors,
-            opponentShape: Shape.scissors,
+            ourShape: Shape.Scissors,
+            opponentShape: Shape.Scissors,
         },
         {
             score: 9,
-            ourShape: Shape.scissors,
-            opponentShape: Shape.paper,
+            ourShape: Shape.Scissors,
+            opponentShape: Shape.Paper,
         },
     ].forEach(({ score, ourShape, opponentShape }) => {
         it(`returns ${score} for choosing ${ourShape} and opponent choosing ${opponentShape}`, () => {
