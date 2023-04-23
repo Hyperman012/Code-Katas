@@ -55,6 +55,11 @@ describe("Rock Paper Scissors", () => {
             ourShape: Shape.Scissors,
             opponentShape: Shape.Paper,
         },
+        {
+            score: 6 + 2,
+            ourShape: Shape.Paper,
+            opponentShape: Shape.Rock,
+        },
     ].forEach(({ score, ourShape, opponentShape }) => {
         it(`returns ${score} for choosing ${ourShape} and opponent choosing ${opponentShape}`, () => {
             expect(new Round(ourShape, opponentShape).totalScore()).to.eq(
