@@ -2,7 +2,7 @@ export class Round {
     constructor(private ourShape: Shape, private opponentShape: Shape) {}
 
     totalScore() {
-        if (this.opponentShape.isPaper() && this.ourShape.isScissors()) {
+        if (this.weWin()) {
             return 9;
         }
 
@@ -10,6 +10,10 @@ export class Round {
             return this.ourShape.score() + 3;
         }
         return this.ourShape.score();
+    }
+
+    private weWin() {
+        return this.opponentShape.isPaper() && this.ourShape.isScissors();
     }
 
     private isTie() {
