@@ -41,17 +41,17 @@ describe("Rock Paper Scissors", () => {
 
     [
         {
-            score: 3,
+            score: 0 + 3,
             ourShape: Shape.Scissors,
             opponentShape: Shape.Rock,
         },
         {
-            score: 6,
+            score: 3 + 3,
             ourShape: Shape.Scissors,
             opponentShape: Shape.Scissors,
         },
         {
-            score: 9,
+            score: 6 + 3,
             ourShape: Shape.Scissors,
             opponentShape: Shape.Paper,
         },

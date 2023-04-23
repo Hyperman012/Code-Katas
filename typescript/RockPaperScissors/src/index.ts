@@ -3,7 +3,7 @@ export class Round {
 
     totalScore() {
         if (this.weWin()) {
-            return 9;
+            return this.ourShape.score() + 6;
         }
 
         if (this.isTie()) {
