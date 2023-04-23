@@ -33,6 +33,8 @@ describe("Rock Paper Scissors", () => {
     });
     it("determines equality", () => {
         expect(Shape.rock.equals(Shape.rock)).to.be.true;
+        expect(Shape.rock.equals(Shape.paper)).to.be.false;
+        expect(Shape.rock.equals(Shape.scissors)).to.be.false;
     });
 
     [

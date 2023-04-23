@@ -51,7 +51,7 @@ export class Shape {
         return this.shape === HandShape.Scissors;
     }
 
-    equals(rock: Shape) {
-        return true;
+    equals(otherShape: Shape) {
+        return this.shape === otherShape.shape;
     }
 }
