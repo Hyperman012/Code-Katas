@@ -54,4 +54,8 @@ export class Shape {
     equals(otherShape: Shape) {
         return this.shape === otherShape.shape;
     }
+
+    toString(): string {
+        return this.shape;
+    }
 }
