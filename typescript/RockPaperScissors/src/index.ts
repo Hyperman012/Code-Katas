@@ -49,4 +49,8 @@ export class Shape {
     isPaper() {
         return this.shape === HandShape.Paper;
     }
+
+    isRock() {
+        return false;
+    }
 }
