@@ -1,5 +1,10 @@
 import { Shape } from "./Shape";
 import { RoundResult } from "./RoundResult";
+export class AwesomeAppleSauce {
+    toRound(opponentInput: string, ourInput: string) {
+        return new Round(Shape.Paper, Shape.Rock);
+    }
+}
 
 export class Round {
     private readonly roundResult = new RoundResult(

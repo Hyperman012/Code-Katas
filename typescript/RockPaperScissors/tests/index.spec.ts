@@ -1,8 +1,19 @@
 import { expect } from "chai";
 import "mocha";
-import { Round } from "../src";
+import { AwesomeAppleSauce, Round } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
+
+describe("AwesomeApplesause", () => {
+    it("creates round object", () => {
+        const testObj = new AwesomeAppleSauce();
+
+        expect(testObj.toRound("A", "Y")).to.deep.eq(
+            new Round(Shape.Paper, Shape.Rock)
+        );
+    });
+});
+
 describe("Shape", () => {
     [
         { score: 3, shape: HandShape.Scissors },
