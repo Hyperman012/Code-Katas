@@ -2,6 +2,7 @@ import { Shape } from "./Shape";
 import { RoundResult } from "./RoundResult";
 export class AwesomeAppleSauce {
     toRound(opponentInput: string, ourInput: string) {
+        if (opponentInput === "B") return new Round(Shape.Rock, Shape.Paper);
         return new Round(Shape.Paper, Shape.Rock);
     }
 }
