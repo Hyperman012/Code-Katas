@@ -20,6 +20,14 @@ describe("AwesomeApplesause", () => {
             new Round(Shape.Paper, Shape.Rock)
         );
     });
+
+    it("creates round object 3", () => {
+        const testObj = new AwesomeAppleSauce();
+
+        expect(testObj.toRound("C", "Z")).to.deep.eq(
+            new Round(Shape.Scissors, Shape.Scissors)
+        );
+    });
 });
 
 describe("Shape", () => {
