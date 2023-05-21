@@ -74,7 +74,7 @@ describe("Rock Paper Scissors", () => {
             expect(new RoundResult(Shape.Scissors, Shape.Scissors).isTie()).to
                 .be.true;
         });
-        xit("determines winner", () => {
+        it("determines winner", () => {
             expect(new RoundResult(Shape.Paper, Shape.Rock).weWin()).to.be.true;
         });
     });

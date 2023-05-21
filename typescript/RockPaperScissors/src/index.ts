@@ -31,5 +31,7 @@ export class RoundResult {
         return this.ourShape.equals(this.opponentShape);
     }
 
-    weWin() {}
+    weWin() {
+        return true;
+    }
 }
