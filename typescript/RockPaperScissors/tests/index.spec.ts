@@ -73,15 +73,19 @@ describe("Round Result", () => {
         expect(new RoundResult(Shape.Scissors, Shape.Scissors).isTie()).to.be
             .true;
     });
-    it("determines winner for Paper vs Rock", () => {
-        expect(new RoundResult(Shape.Paper, Shape.Rock).weWin()).to.be.true;
+    describe("winning", () => {
+        it("for Paper vs Rock", () => {
+            expect(new RoundResult(Shape.Paper, Shape.Rock).weWin()).to.be.true;
+        });
+        it("for Scissors vs Paper", () => {
+            const weWin = new RoundResult(Shape.Scissors, Shape.Paper).weWin();
+            expect(weWin).to.be.true;
+        });
     });
-    it("determines winner for Scissors vs Paper", () => {
-        const weWin = new RoundResult(Shape.Scissors, Shape.Paper).weWin();
-        expect(weWin).to.be.true;
-    });
-    it("determines loser for Scissors vs Rock", () => {
-        const weWin = new RoundResult(Shape.Scissors, Shape.Rock).weWin();
-        expect(weWin).to.be.false;
+    describe("losing", () => {
+        it("for Scissors vs Rock", () => {
+            const weWin = new RoundResult(Shape.Scissors, Shape.Rock).weWin();
+            expect(weWin).to.be.false;
+        });
     });
 });
