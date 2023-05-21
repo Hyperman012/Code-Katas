@@ -8,9 +8,20 @@ export class RoundResult {
     }
 
     weWin() {
-        if (this.opponentShape.isScissors() && this.ourShape.isRock())
-            return true;
-        if (this.opponentShape.isRock() && this.ourShape.isPaper()) return true;
-        return this.opponentShape.isPaper() && this.ourShape.isScissors();
+        if (this.isRockVsScissors()) return true;
+        if (this.isPaperVsRock()) return true;
+        return this.isScissorsVsPaper();
+    }
+
+    private isScissorsVsPaper() {
+        return this.ourShape.isScissors() && this.opponentShape.isPaper();
+    }
+
+    private isPaperVsRock() {
+        return this.ourShape.isPaper() && this.opponentShape.isRock();
+    }
+
+    private isRockVsScissors() {
+        return this.ourShape.isRock() && this.opponentShape.isScissors();
     }
 }
