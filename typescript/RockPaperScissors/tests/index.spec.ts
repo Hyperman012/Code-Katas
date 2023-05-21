@@ -1,7 +1,8 @@
 import { expect } from "chai";
 import "mocha";
-import { Round, RoundResult } from "../src";
+import { Round } from "../src";
 import { HandShape, Shape } from "../src/Shape";
+import { RoundResult } from "../src/RoundResult";
 
 describe("Rock Paper Scissors", () => {
     describe("Shape", () => {
@@ -69,7 +70,7 @@ describe("Rock Paper Scissors", () => {
         });
     });
 
-    describe("something something applesauce", () => {
+    describe("Round Result", () => {
         it("determines tie", () => {
             expect(new RoundResult(Shape.Scissors, Shape.Scissors).isTie()).to
                 .be.true;
