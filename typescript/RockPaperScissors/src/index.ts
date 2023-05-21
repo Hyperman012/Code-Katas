@@ -15,8 +15,7 @@ export class Round {
     }
 
     private weWin() {
-        if (this.opponentShape.isRock() && this.ourShape.isPaper()) return true;
-        return this.opponentShape.isPaper() && this.ourShape.isScissors();
+        return new RoundResult(this.ourShape, this.opponentShape).weWin();
     }
 
     private isTie() {
