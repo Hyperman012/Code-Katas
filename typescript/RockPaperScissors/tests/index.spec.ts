@@ -1,8 +1,15 @@
 import { expect } from "chai";
 import "mocha";
-import { StrategyGuideLine, Round } from "../src";
+import { StrategyGuideLine, Round, StrategyGuide } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
+
+describe("StrategyGuide", () => {
+    it("scores one round", () => {
+        const score = new StrategyGuide([["A", "Y"]]).score();
+        expect(score).to.eq(8);
+    });
+});
 
 describe("StrategyGuideLine", () => {
     it("creates round object", () => {

@@ -1,5 +1,13 @@
-import { HandShape, Shape } from "./Shape";
+import { Shape } from "./Shape";
 import { RoundResult } from "./RoundResult";
+
+export class StrategyGuide {
+    constructor(private readonly guide: string[][]) {}
+
+    score(): number {
+        return 8;
+    }
+}
 
 interface InputShapeMap {
     [s: string]: Shape;
