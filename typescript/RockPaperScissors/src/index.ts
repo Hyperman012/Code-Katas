@@ -20,11 +20,11 @@ export class Round {
     }
 
     private isTie() {
-        return new RoundRules(this.ourShape, this.opponentShape).isTie();
+        return new RoundResult(this.ourShape, this.opponentShape).isTie();
     }
 }
 
-export class RoundRules {
+export class RoundResult {
     constructor(private ourShape: Shape, private opponentShape: Shape) {}
 
     isTie() {

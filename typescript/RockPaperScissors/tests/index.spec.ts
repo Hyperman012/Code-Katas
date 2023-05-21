@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import "mocha";
-import { Round, RoundRules } from "../src";
+import { Round, RoundResult } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 
 describe("Rock Paper Scissors", () => {
@@ -71,11 +71,11 @@ describe("Rock Paper Scissors", () => {
 
     describe("something something applesauce", () => {
         it("determines tie", () => {
-            expect(new RoundRules(Shape.Scissors, Shape.Scissors).isTie()).to.be
-                .true;
+            expect(new RoundResult(Shape.Scissors, Shape.Scissors).isTie()).to
+                .be.true;
         });
         xit("determines winner", () => {
-            expect(new RoundRules(Shape.Paper, Shape.Rock).weWin()).to.be.true;
+            expect(new RoundResult(Shape.Paper, Shape.Rock).weWin()).to.be.true;
         });
     });
 });
