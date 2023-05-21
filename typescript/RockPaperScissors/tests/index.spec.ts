@@ -81,6 +81,10 @@ describe("Round Result", () => {
             const weWin = new RoundResult(Shape.Scissors, Shape.Paper).weWin();
             expect(weWin).to.be.true;
         });
+        it("for Rock vs Scissors", () => {
+            const weWin = new RoundResult(Shape.Rock, Shape.Scissors).weWin();
+            expect(weWin).to.be.true;
+        });
     });
     describe("losing", () => {
         it("for Scissors vs Rock", () => {
