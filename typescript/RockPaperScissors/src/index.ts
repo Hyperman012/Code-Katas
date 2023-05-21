@@ -5,7 +5,11 @@ export class StrategyGuide {
     constructor(private readonly guide: string[][]) {}
 
     score(): number {
-        return 8;
+        const opponentInput = this.guide[0][0];
+        const ourInput = this.guide[0][1];
+        return new StrategyGuideLine()
+            .toRound(opponentInput, ourInput)
+            .totalScore();
     }
 }
 

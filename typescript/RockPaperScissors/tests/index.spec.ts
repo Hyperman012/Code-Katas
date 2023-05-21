@@ -5,9 +5,13 @@ import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
 
 describe("StrategyGuide", () => {
-    it("scores one round", () => {
+    it("scores one round A Y", () => {
         const score = new StrategyGuide([["A", "Y"]]).score();
         expect(score).to.eq(8);
+    });
+    it("scores one round B X", () => {
+        const score = new StrategyGuide([["B", "X"]]).score();
+        expect(score).to.eq(1);
     });
 });
 
