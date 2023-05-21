@@ -69,7 +69,7 @@ describe("Rock Paper Scissors", () => {
     });
 });
 describe("Round Result", () => {
-    it("determines tie", () => {
+    it("ties", () => {
         expect(new RoundResult(Shape.Scissors, Shape.Scissors).isTie()).to.be
             .true;
     });
@@ -89,6 +89,14 @@ describe("Round Result", () => {
     describe("losing", () => {
         it("for Scissors vs Rock", () => {
             const weWin = new RoundResult(Shape.Scissors, Shape.Rock).weWin();
+            expect(weWin).to.be.false;
+        });
+        it("for Rock vs Paper", () => {
+            const weWin = new RoundResult(Shape.Rock, Shape.Paper).weWin();
+            expect(weWin).to.be.false;
+        });
+        it("for Paper vs Scissors", () => {
+            const weWin = new RoundResult(Shape.Paper, Shape.Scissors).weWin();
             expect(weWin).to.be.false;
         });
     });
