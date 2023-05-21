@@ -5,7 +5,7 @@ interface InputShapeMap {
     [s: string]: Shape;
 }
 
-export class AwesomeAppleSauce {
+export class StrategyGuideLine {
     private opponentShapeMap: InputShapeMap = {
         A: Shape.Rock,
         B: Shape.Paper,

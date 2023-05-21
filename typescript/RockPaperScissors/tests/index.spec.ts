@@ -1,30 +1,30 @@
 import { expect } from "chai";
 import "mocha";
-import { AwesomeAppleSauce, Round } from "../src";
+import { StrategyGuideLine, Round } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
 
-describe("AwesomeApplesause", () => {
+describe("StrategyGuideLine", () => {
     it("creates round object", () => {
-        const testObj = new AwesomeAppleSauce();
+        const strategyGuideLine = new StrategyGuideLine();
 
-        expect(testObj.toRound("A", "Y")).to.deep.eq(
+        expect(strategyGuideLine.toRound("A", "Y")).to.deep.eq(
             new Round(Shape.Rock, Shape.Paper)
         );
     });
 
     it("creates round object 2", () => {
-        const testObj = new AwesomeAppleSauce();
+        const strategyGuideLine = new StrategyGuideLine();
 
-        expect(testObj.toRound("B", "X")).to.deep.eq(
+        expect(strategyGuideLine.toRound("B", "X")).to.deep.eq(
             new Round(Shape.Paper, Shape.Rock)
         );
     });
 
     it("creates round object 3", () => {
-        const testObj = new AwesomeAppleSauce();
+        const strategyGuideLine = new StrategyGuideLine();
 
-        expect(testObj.toRound("C", "Z")).to.deep.eq(
+        expect(strategyGuideLine.toRound("C", "Z")).to.deep.eq(
             new Round(Shape.Scissors, Shape.Scissors)
         );
     });
