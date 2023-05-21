@@ -1,11 +1,26 @@
-import { Shape } from "./Shape";
+import { HandShape, Shape } from "./Shape";
 import { RoundResult } from "./RoundResult";
+
+interface InputShapeMap {
+    [s: string]: Shape;
+}
+
 export class AwesomeAppleSauce {
+    private opponentShapeMap: InputShapeMap = {
+        A: Shape.Rock,
+        B: Shape.Paper,
+        C: Shape.Scissors,
+    };
+    private ourShapeMap: InputShapeMap = {
+        X: Shape.Rock,
+        Y: Shape.Paper,
+        Z: Shape.Scissors,
+    };
     toRound(opponentInput: string, ourInput: string) {
-        if (opponentInput === "B") return new Round(Shape.Paper, Shape.Rock);
-        if (opponentInput === "C")
-            return new Round(Shape.Scissors, Shape.Scissors);
-        return new Round(Shape.Rock, Shape.Paper);
+        return new Round(
+            this.opponentShapeMap[opponentInput],
+            this.ourShapeMap[ourInput]
+        );
     }
 }
 
