@@ -1,7 +1,7 @@
 import { Shape } from "./Shape";
 
 export class RoundResult {
-    constructor(private ourShape: Shape, private opponentShape: Shape) {}
+    constructor(private opponentShape: Shape, private ourShape: Shape) {}
 
     isTie() {
         return this.ourShape.equals(this.opponentShape);

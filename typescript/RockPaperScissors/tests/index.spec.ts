@@ -9,7 +9,7 @@ describe("AwesomeApplesause", () => {
         const testObj = new AwesomeAppleSauce();
 
         expect(testObj.toRound("A", "Y")).to.deep.eq(
-            new Round(Shape.Paper, Shape.Rock)
+            new Round(Shape.Rock, Shape.Paper)
         );
     });
 
@@ -17,7 +17,7 @@ describe("AwesomeApplesause", () => {
         const testObj = new AwesomeAppleSauce();
 
         expect(testObj.toRound("B", "X")).to.deep.eq(
-            new Round(Shape.Rock, Shape.Paper)
+            new Round(Shape.Paper, Shape.Rock)
         );
     });
 });
@@ -81,7 +81,7 @@ describe("Rock Paper Scissors", () => {
         },
     ].forEach(({ score, ourShape, opponentShape }) => {
         it(`returns ${score} for choosing ${ourShape} and opponent choosing ${opponentShape}`, () => {
-            expect(new Round(ourShape, opponentShape).totalScore()).to.eq(
+            expect(new Round(opponentShape, ourShape).totalScore()).to.eq(
                 score
             );
         });
@@ -94,28 +94,28 @@ describe("Round Result", () => {
     });
     describe("winning", () => {
         it("for Paper vs Rock", () => {
-            expect(new RoundResult(Shape.Paper, Shape.Rock).weWin()).to.be.true;
+            expect(new RoundResult(Shape.Rock, Shape.Paper).weWin()).to.be.true;
         });
         it("for Scissors vs Paper", () => {
-            const weWin = new RoundResult(Shape.Scissors, Shape.Paper).weWin();
+            const weWin = new RoundResult(Shape.Paper, Shape.Scissors).weWin();
             expect(weWin).to.be.true;
         });
         it("for Rock vs Scissors", () => {
-            const weWin = new RoundResult(Shape.Rock, Shape.Scissors).weWin();
+            const weWin = new RoundResult(Shape.Scissors, Shape.Rock).weWin();
             expect(weWin).to.be.true;
         });
     });
     describe("losing", () => {
         it("for Scissors vs Rock", () => {
-            const weWin = new RoundResult(Shape.Scissors, Shape.Rock).weWin();
+            const weWin = new RoundResult(Shape.Rock, Shape.Scissors).weWin();
             expect(weWin).to.be.false;
         });
         it("for Rock vs Paper", () => {
-            const weWin = new RoundResult(Shape.Rock, Shape.Paper).weWin();
+            const weWin = new RoundResult(Shape.Paper, Shape.Rock).weWin();
             expect(weWin).to.be.false;
         });
         it("for Paper vs Scissors", () => {
-            const weWin = new RoundResult(Shape.Paper, Shape.Scissors).weWin();
+            const weWin = new RoundResult(Shape.Scissors, Shape.Paper).weWin();
             expect(weWin).to.be.false;
         });
     });
