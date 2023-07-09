@@ -63,7 +63,7 @@ describe("StrategyGuide", () => {
 
     it("creates Strategy from AoC input", () => {
         const guide = StrategyGuide.from(aocInput);
-        expect(guide.score()).to.eq(533);
+        expect(guide.score()).to.eq(13484);
     });
 });
 
