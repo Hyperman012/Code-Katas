@@ -7,14 +7,16 @@ export class StrategyGuide {
     score(): number {
         let totalScore = 0;
         for (const round of this.guide) {
-            const opponentInput = round[0];
-            const ourInput = round[1];
-            totalScore += new StrategyGuideLine()
-                .toRound(opponentInput, ourInput)
-                .totalScore();
+            totalScore += this.getRound(round).totalScore();
         }
 
         return totalScore;
+    }
+
+    private getRound(round: string[]): Round {
+        const opponentInput = round[0];
+        const ourInput = round[1];
+        return new StrategyGuideLine().toRound(opponentInput, ourInput);
     }
 }
 
