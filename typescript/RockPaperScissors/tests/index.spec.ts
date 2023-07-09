@@ -5,6 +5,20 @@ import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
 import { aocInput } from "../src/adventOfCodeInput";
 
+function determineShape(roundAsArray: string[]): Shape {
+    return Shape.Scissors;
+}
+
+describe("Determine the correct play based on strategy", () => {
+    it("loses with X", () => {
+        const shapeToPlay = determineShape(["A X"]);
+        expect(shapeToPlay).to.eq(Shape.Scissors);
+    });
+
+    it("draw with Y", () => {});
+    it("win with Z", () => {});
+});
+
 describe("StrategyGuide", () => {
     const eightPointGame = ["A", "Y"];
     const onePointGame = ["B", "X"];
