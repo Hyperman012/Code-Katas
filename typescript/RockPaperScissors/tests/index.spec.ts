@@ -1,18 +1,34 @@
 import { expect } from "chai";
 import "mocha";
-import { StrategyGuideLine, Round, StrategyGuide } from "../src";
+import { Round, StrategyGuide, StrategyGuideLine } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
 import { aocInput } from "../src/adventOfCodeInput";
 
-function determineShape(roundAsArray: string[]): Shape {
-    return Shape.Scissors;
+enum RequestResult {
+    Win,
+    Lose,
+    Draw,
+}
+
+function determineShape(
+    opponentShape: Shape,
+    requestedResult: RequestResult
+): Shape {
+    if (opponentShape.isRock() && requestedResult === RequestResult.Lose) {
+        return Shape.Scissors;
+    }
+    return Shape.Rock;
 }
 
 describe("Determine the correct play based on strategy", () => {
     it("loses with X", () => {
-        const shapeToPlay = determineShape(["A X"]);
-        expect(shapeToPlay).to.eq(Shape.Scissors);
+        expect(determineShape(Shape.Rock, RequestResult.Lose)).to.eq(
+            Shape.Scissors
+        );
+        expect(determineShape(Shape.Paper, RequestResult.Lose)).to.eq(
+            Shape.Rock
+        );
     });
 
     it("draw with Y", () => {});
