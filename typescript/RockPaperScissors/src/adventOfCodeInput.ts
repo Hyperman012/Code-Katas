@@ -1,0 +1,2 @@
+export const aocInput =
+    "C X\nC Y\nC X\nB X\nB Z\nA Z\nC Y\nC Z\nB Z\nC X\nB Y\nC Y\nC Y\nA Y\nC Y\nC Y\nC Z\nC X\nB Z\nC Y\nA Y\nA Y\nC Z\nB Y\nA Y\nC Z\nC Y\nA Y\nA Y\nB Y\nC Y\nC Z\nC Y\nB X\nB Z\nC Y\nB Z\nA X\nC Z\nA Y\nB Y\nC Y\nC Y\nB Z\nB Y\nA Z\nC X\nC X\nC Y\nC X\nB Z\nA Y\nB X\nB Z\nC Z\nC X\nC X\nB Z\nA Y\nB Y\nC Y\nC Y\nA Y\nC X\nA Y\nB Z\nC Y\nC Y\nB Y\nC Y\nA Z\nA Z\nB X\nA Y\nC Y\nA Y\nC Y\nC Y\nC X\nC Y\nB Z\nC Y\nC Z\nC X\nB X\nC Y\nC Y\nC X\nC Z\nA Y\nC X\nB Z\nC X\nA Y\nB Y\nC Y\nA Y\nA Y\nA Y\nB Y\nC Y\n";

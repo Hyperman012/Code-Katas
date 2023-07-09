@@ -8,6 +8,7 @@ export class StrategyGuide {
         return new StrategyGuide(
             guideAsString
                 .split("\n")
+                .filter((string) => string !== "")
                 .map((roundAsString) => roundAsString.split(" "))
         );
     }

@@ -3,6 +3,7 @@ import "mocha";
 import { StrategyGuideLine, Round, StrategyGuide } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
+import { aocInput } from "../src/adventOfCodeInput";
 
 describe("StrategyGuide", () => {
     const eightPointGame = ["A", "Y"];
@@ -48,6 +49,21 @@ describe("StrategyGuide", () => {
                 ["A", "X"],
             ])
         );
+    });
+    it("filters out empty lines from input", () => {
+        const input = "A X\nA X\n";
+        const guide = StrategyGuide.from(input);
+        expect(guide).to.deep.eq(
+            new StrategyGuide([
+                ["A", "X"],
+                ["A", "X"],
+            ])
+        );
+    });
+
+    xit("creates Strategy from AoC input", () => {
+        const guide = StrategyGuide.from(aocInput);
+        expect(guide.score()).to.eq(0);
     });
 });
 
