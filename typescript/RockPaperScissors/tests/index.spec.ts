@@ -6,6 +6,7 @@ import {
     Round,
     StrategyGuide,
     SecretStrategyGuideLine,
+    UltraTopSecretStrategyGuideLine,
 } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
@@ -134,6 +135,19 @@ describe("SecretStrategyGuideLine", () => {
         expect(strategyGuideLine.toRound("C", "Z")).to.deep.eq(
             new Round(Shape.Scissors, Shape.Scissors)
         );
+    });
+});
+
+describe("UltraTopSecretStrategyGuideLine", () => {
+    describe("Losing Rounds", () => {
+        const losingInput = "X";
+        it("creates round for rock", () => {
+            const strategyGuideLine = new UltraTopSecretStrategyGuideLine();
+
+            expect(strategyGuideLine.toRound("A", losingInput)).to.deep.eq(
+                new Round(Shape.Rock, Shape.Scissors)
+            );
+        });
     });
 });
 

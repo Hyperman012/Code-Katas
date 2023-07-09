@@ -67,8 +67,17 @@ export function determineShape(
 
     return determineDrawShape(opponentShape);
 }
+export class UltraTopSecretStrategyGuideLine implements StrategyGuideLine {
+    toRound(opponentInput: string, ourInput: string): Round {
+        return new Round(Shape.Rock, Shape.Scissors);
+    }
+}
 
-export class SecretStrategyGuideLine {
+interface StrategyGuideLine {
+    toRound(opponentInput: string, ourInput: string): Round;
+}
+
+export class SecretStrategyGuideLine implements StrategyGuideLine {
     private opponentShapeMap: InputShapeMap = {
         A: Shape.Rock,
         B: Shape.Paper,
@@ -79,6 +88,7 @@ export class SecretStrategyGuideLine {
         Y: Shape.Paper,
         Z: Shape.Scissors,
     };
+
     toRound(opponentInput: string, ourInput: string) {
         return new Round(
             this.opponentShapeMap[opponentInput],
