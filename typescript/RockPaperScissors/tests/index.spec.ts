@@ -1,16 +1,16 @@
 import { expect } from "chai";
 import "mocha";
-import {
-    determineShape,
-    RequestResult,
-    Round,
-    StrategyGuide,
-    SecretStrategyGuideLine,
-    UltraTopSecretStrategyGuideLine,
-} from "../src";
+import { StrategyGuide } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
 import { aocInput } from "../src/adventOfCodeInput";
+import { Round } from "../src/round";
+import {
+    RequestResult,
+    SecretStrategyGuideLine,
+    UltraTopSecretStrategyGuideLine,
+} from "../src/secretStrategyGuideLine";
+import { determineShape } from "../src/determineShape";
 
 describe("Determine the correct play based on strategy", () => {
     it("determines shape for loss", () => {
