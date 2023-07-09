@@ -1,8 +1,14 @@
 import { Round } from "./round";
-import { SecretStrategyGuideLine } from "./secretStrategyGuideLine";
+import {
+    SecretStrategyGuideLine,
+    StrategyGuideLine,
+} from "./secretStrategyGuideLine";
 
 export class StrategyGuide {
-    constructor(private readonly guide: string[][]) {}
+    constructor(
+        private readonly guide: string[][],
+        private strategyGuideLine: StrategyGuideLine = new SecretStrategyGuideLine()
+    ) {}
 
     static from(guideAsString: string) {
         return new StrategyGuide(
@@ -25,6 +31,6 @@ export class StrategyGuide {
     private getRound(round: string[]): Round {
         const opponentInput = round[0];
         const ourInput = round[1];
-        return new SecretStrategyGuideLine().toRound(opponentInput, ourInput);
+        return this.strategyGuideLine.toRound(opponentInput, ourInput);
     }
 }

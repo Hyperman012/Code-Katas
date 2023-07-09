@@ -16,7 +16,7 @@ export enum RequestResult {
     Lose,
     Draw,
 }
-interface StrategyGuideLine {
+export interface StrategyGuideLine {
     toRound(opponentInput: string, ourInput: string): Round;
 }
 
