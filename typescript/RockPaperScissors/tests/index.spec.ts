@@ -107,9 +107,19 @@ describe("StrategyGuide", () => {
         );
     });
 
-    it("creates Strategy from AoC input", () => {
-        const guide = StrategyGuide.from(aocInput);
+    it("creates Strategy from AoC input using SecretStrategy", () => {
+        const guide = StrategyGuide.from(
+            aocInput,
+            new SecretStrategyGuideLine()
+        );
         expect(guide.score()).to.eq(13484);
+    });
+    it("creates Strategy from AoC input using UltraTopSecretStrategy", () => {
+        const guide = StrategyGuide.from(
+            aocInput,
+            new UltraTopSecretStrategyGuideLine()
+        );
+        expect(guide.score()).to.eq(13433);
     });
 
     describe("with ultra top secret strategy", () => {

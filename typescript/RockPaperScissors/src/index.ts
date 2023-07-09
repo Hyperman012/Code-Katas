@@ -2,6 +2,7 @@ import { Round } from "./round";
 import {
     SecretStrategyGuideLine,
     StrategyGuideLine,
+    UltraTopSecretStrategyGuideLine,
 } from "./secretStrategyGuideLine";
 
 export class StrategyGuide {
@@ -10,13 +11,16 @@ export class StrategyGuide {
         private strategyGuideLine: StrategyGuideLine = new SecretStrategyGuideLine()
     ) {}
 
-    static from(guideAsString: string) {
-        return new StrategyGuide(
-            guideAsString
-                .split("\n")
-                .filter((string) => string !== "")
-                .map((roundAsString) => roundAsString.split(" "))
-        );
+    static from(
+        guideAsString: string,
+        strategyGuideLine: StrategyGuideLine = new SecretStrategyGuideLine()
+    ) {
+        const guide = guideAsString
+            .split("\n")
+            .filter((string) => string !== "")
+            .map((roundAsString) => roundAsString.split(" "));
+
+        return new StrategyGuide(guide, strategyGuideLine);
     }
 
     score(): number {
