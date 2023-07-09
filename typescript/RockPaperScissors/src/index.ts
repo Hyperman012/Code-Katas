@@ -59,13 +59,11 @@ export function determineShape(
     opponentShape: Shape,
     requestedResult: RequestResult
 ): Shape {
-    if (requestedResult === RequestResult.Win) {
+    if (requestedResult === RequestResult.Win)
         return determineWinningShape(opponentShape);
-    }
 
-    if (requestedResult === RequestResult.Lose) {
+    if (requestedResult === RequestResult.Lose)
         return determineLosingShape(opponentShape);
-    }
 
     return determineDrawShape(opponentShape);
 }
