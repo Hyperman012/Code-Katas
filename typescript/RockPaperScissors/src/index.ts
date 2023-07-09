@@ -49,15 +49,13 @@ export function determineShape(
         return Shape.Paper;
     }
 
-    if (requestedResult === RequestResult.Draw) {
-        return opponentShape;
+    if (requestedResult === RequestResult.Lose) {
+        if (opponentShape.isRock()) return Shape.Scissors;
+        if (opponentShape.isScissors()) return Shape.Paper;
+        return Shape.Rock;
     }
 
-    if (opponentShape.isRock() && requestedResult === RequestResult.Lose) {
-        return Shape.Scissors;
-    }
-    if (opponentShape.isScissors()) return Shape.Paper;
-    return Shape.Rock;
+    return opponentShape;
 }
 
 export class StrategyGuideLine {
