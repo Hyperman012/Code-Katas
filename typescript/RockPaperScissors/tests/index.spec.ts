@@ -15,6 +15,10 @@ function determineShape(
     opponentShape: Shape,
     requestedResult: RequestResult
 ): Shape {
+    if (requestedResult === RequestResult.Draw) {
+        return opponentShape;
+    }
+
     if (opponentShape.isRock() && requestedResult === RequestResult.Lose) {
         return Shape.Scissors;
     }
@@ -23,7 +27,7 @@ function determineShape(
 }
 
 describe("Determine the correct play based on strategy", () => {
-    it("loses with X", () => {
+    it("determines shape for loss", () => {
         expect(determineShape(Shape.Rock, RequestResult.Lose)).to.eq(
             Shape.Scissors
         );
@@ -35,8 +39,19 @@ describe("Determine the correct play based on strategy", () => {
         );
     });
 
-    it("draw with Y", () => {});
-    it("win with Z", () => {});
+    it("determines shape for draw", () => {
+        expect(determineShape(Shape.Rock, RequestResult.Draw)).to.eq(
+            Shape.Rock
+        );
+        expect(determineShape(Shape.Paper, RequestResult.Draw)).to.eq(
+            Shape.Paper
+        );
+        expect(determineShape(Shape.Scissors, RequestResult.Draw)).to.eq(
+            Shape.Scissors
+        );
+    });
+
+    it("determines shape for win", () => {});
 });
 
 describe("StrategyGuide", () => {
