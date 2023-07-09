@@ -15,6 +15,10 @@ function determineShape(
     opponentShape: Shape,
     requestedResult: RequestResult
 ): Shape {
+    if (requestedResult === RequestResult.Win) {
+        return Shape.Paper;
+    }
+
     if (requestedResult === RequestResult.Draw) {
         return opponentShape;
     }
@@ -51,7 +55,11 @@ describe("Determine the correct play based on strategy", () => {
         );
     });
 
-    it("determines shape for win", () => {});
+    it("determines shape for win", () => {
+        expect(determineShape(Shape.Rock, RequestResult.Win)).to.eq(
+            Shape.Paper
+        );
+    });
 });
 
 describe("StrategyGuide", () => {
