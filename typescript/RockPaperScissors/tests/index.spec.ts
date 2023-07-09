@@ -18,6 +18,7 @@ function determineShape(
     if (opponentShape.isRock() && requestedResult === RequestResult.Lose) {
         return Shape.Scissors;
     }
+    if (opponentShape.isScissors()) return Shape.Paper;
     return Shape.Rock;
 }
 
@@ -28,6 +29,9 @@ describe("Determine the correct play based on strategy", () => {
         );
         expect(determineShape(Shape.Paper, RequestResult.Lose)).to.eq(
             Shape.Rock
+        );
+        expect(determineShape(Shape.Scissors, RequestResult.Lose)).to.eq(
+            Shape.Paper
         );
     });
 
