@@ -58,6 +58,7 @@ describe("StrategyGuide", () => {
         const score = new StrategyGuide([eightPointGame]).score();
         expect(score).to.eq(8);
     });
+
     it("scores one round B X", () => {
         const score = new StrategyGuide([onePointGame]).score();
         expect(score).to.eq(1);
@@ -109,6 +110,32 @@ describe("StrategyGuide", () => {
     it("creates Strategy from AoC input", () => {
         const guide = StrategyGuide.from(aocInput);
         expect(guide.score()).to.eq(13484);
+    });
+
+    describe("with ultra top secret strategy", () => {
+        it("scores losing round with Paper", () => {
+            const score = new StrategyGuide(
+                [["B", "X"]],
+                new UltraTopSecretStrategyGuideLine()
+            ).score();
+            expect(score).to.eq(1);
+        });
+
+        it("scores draw round with Rock", () => {
+            const score = new StrategyGuide(
+                [["A", "Y"]],
+                new UltraTopSecretStrategyGuideLine()
+            ).score();
+            expect(score).to.eq(4);
+        });
+
+        it("scores win round with Scissors", () => {
+            const score = new StrategyGuide(
+                [["C", "Z"]],
+                new UltraTopSecretStrategyGuideLine()
+            ).score();
+            expect(score).to.eq(7);
+        });
     });
 });
 
