@@ -44,6 +44,7 @@ export function determineShape(
     requestedResult: RequestResult
 ): Shape {
     if (requestedResult === RequestResult.Win) {
+        if (opponentShape.isPaper()) return Shape.Scissors;
         return Shape.Paper;
     }
 

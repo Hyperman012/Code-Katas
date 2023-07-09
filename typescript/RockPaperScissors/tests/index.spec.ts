@@ -40,6 +40,9 @@ describe("Determine the correct play based on strategy", () => {
         expect(determineShape(Shape.Rock, RequestResult.Win)).to.eq(
             Shape.Paper
         );
+        expect(determineShape(Shape.Paper, RequestResult.Win)).to.eq(
+            Shape.Scissors
+        );
     });
 });
 
