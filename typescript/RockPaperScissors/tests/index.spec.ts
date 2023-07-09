@@ -5,7 +5,7 @@ import {
     RequestResult,
     Round,
     StrategyGuide,
-    StrategyGuideLine,
+    SecretStrategyGuideLine,
 } from "../src";
 import { HandShape, Shape } from "../src/Shape";
 import { RoundResult } from "../src/RoundResult";
@@ -111,9 +111,9 @@ describe("StrategyGuide", () => {
     });
 });
 
-describe("StrategyGuideLine", () => {
+describe("SecretStrategyGuideLine", () => {
     it("creates round object", () => {
-        const strategyGuideLine = new StrategyGuideLine();
+        const strategyGuideLine = new SecretStrategyGuideLine();
 
         expect(strategyGuideLine.toRound("A", "Y")).to.deep.eq(
             new Round(Shape.Rock, Shape.Paper)
@@ -121,7 +121,7 @@ describe("StrategyGuideLine", () => {
     });
 
     it("creates round object 2", () => {
-        const strategyGuideLine = new StrategyGuideLine();
+        const strategyGuideLine = new SecretStrategyGuideLine();
 
         expect(strategyGuideLine.toRound("B", "X")).to.deep.eq(
             new Round(Shape.Paper, Shape.Rock)
@@ -129,7 +129,7 @@ describe("StrategyGuideLine", () => {
     });
 
     it("creates round object 3", () => {
-        const strategyGuideLine = new StrategyGuideLine();
+        const strategyGuideLine = new SecretStrategyGuideLine();
 
         expect(strategyGuideLine.toRound("C", "Z")).to.deep.eq(
             new Round(Shape.Scissors, Shape.Scissors)

@@ -25,7 +25,7 @@ export class StrategyGuide {
     private getRound(round: string[]): Round {
         const opponentInput = round[0];
         const ourInput = round[1];
-        return new StrategyGuideLine().toRound(opponentInput, ourInput);
+        return new SecretStrategyGuideLine().toRound(opponentInput, ourInput);
     }
 }
 
@@ -68,7 +68,7 @@ export function determineShape(
     return determineDrawShape(opponentShape);
 }
 
-export class StrategyGuideLine {
+export class SecretStrategyGuideLine {
     private opponentShapeMap: InputShapeMap = {
         A: Shape.Rock,
         B: Shape.Paper,
