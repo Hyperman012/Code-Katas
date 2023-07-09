@@ -149,6 +149,17 @@ describe("UltraTopSecretStrategyGuideLine", () => {
             );
         });
     });
+
+    describe("Draw Rounds", () => {
+        const drawInput = "Y";
+        it("creates round for rock", () => {
+            const strategyGuideLine = new UltraTopSecretStrategyGuideLine();
+
+            expect(strategyGuideLine.toRound("A", drawInput)).to.deep.eq(
+                new Round(Shape.Rock, Shape.Rock)
+            );
+        });
+    });
 });
 
 describe("Shape", () => {
