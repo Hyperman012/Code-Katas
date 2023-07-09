@@ -61,9 +61,9 @@ describe("StrategyGuide", () => {
         );
     });
 
-    xit("creates Strategy from AoC input", () => {
+    it("creates Strategy from AoC input", () => {
         const guide = StrategyGuide.from(aocInput);
-        expect(guide.score()).to.eq(0);
+        expect(guide.score()).to.eq(533);
     });
 });
 
