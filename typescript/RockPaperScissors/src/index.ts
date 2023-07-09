@@ -4,6 +4,14 @@ import { RoundResult } from "./RoundResult";
 export class StrategyGuide {
     constructor(private readonly guide: string[][]) {}
 
+    static from(guideAsString: string) {
+        return new StrategyGuide(
+            guideAsString
+                .split("\n")
+                .map((roundAsString) => roundAsString.split(" "))
+        );
+    }
+
     score(): number {
         let totalScore = 0;
         for (const round of this.guide) {
@@ -17,13 +25,6 @@ export class StrategyGuide {
         const opponentInput = round[0];
         const ourInput = round[1];
         return new StrategyGuideLine().toRound(opponentInput, ourInput);
-    }
-
-    static from(guideAsString: string) {
-        const array = guideAsString
-            .split("\n")
-            .map((roundAsString) => roundAsString.split(" "));
-        return new StrategyGuide(array);
     }
 }
 
