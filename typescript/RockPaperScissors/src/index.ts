@@ -33,6 +33,31 @@ interface InputShapeMap {
     [s: string]: Shape;
 }
 
+export enum RequestResult {
+    Win,
+    Lose,
+    Draw,
+}
+
+export function determineShape(
+    opponentShape: Shape,
+    requestedResult: RequestResult
+): Shape {
+    if (requestedResult === RequestResult.Win) {
+        return Shape.Paper;
+    }
+
+    if (requestedResult === RequestResult.Draw) {
+        return opponentShape;
+    }
+
+    if (opponentShape.isRock() && requestedResult === RequestResult.Lose) {
+        return Shape.Scissors;
+    }
+    if (opponentShape.isScissors()) return Shape.Paper;
+    return Shape.Rock;
+}
+
 export class StrategyGuideLine {
     private opponentShapeMap: InputShapeMap = {
         A: Shape.Rock,
