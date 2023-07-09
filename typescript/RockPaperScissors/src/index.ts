@@ -32,6 +32,9 @@ export class StrategyGuide {
 interface InputShapeMap {
     [s: string]: Shape;
 }
+interface InputRequestResultMap {
+    [s: string]: RequestResult;
+}
 
 export enum RequestResult {
     Win,
@@ -68,11 +71,19 @@ export function determineShape(
     return determineDrawShape(opponentShape);
 }
 export class UltraTopSecretStrategyGuideLine implements StrategyGuideLine {
+    private ourShapeMap: InputRequestResultMap = {
+        X: RequestResult.Lose,
+        Y: RequestResult.Draw,
+        Z: RequestResult.Win,
+    };
     toRound(opponentInput: string, ourInput: string): Round {
-        if (ourInput === "Z") return new Round(Shape.Rock, Shape.Paper);
-        if (ourInput === "Y") return new Round(Shape.Rock, Shape.Rock);
+        const opponentShape = getOpponentShape(opponentInput);
+        const ourShape = determineShape(
+            opponentShape,
+            this.ourShapeMap[ourInput]
+        );
 
-        return new Round(Shape.Rock, Shape.Scissors);
+        return new Round(opponentShape, ourShape);
     }
 }
 
@@ -80,12 +91,17 @@ interface StrategyGuideLine {
     toRound(opponentInput: string, ourInput: string): Round;
 }
 
+const opponentShapeMap: InputShapeMap = {
+    A: Shape.Rock,
+    B: Shape.Paper,
+    C: Shape.Scissors,
+};
+
+function getOpponentShape(opponentInput: string) {
+    return opponentShapeMap[opponentInput];
+}
+
 export class SecretStrategyGuideLine implements StrategyGuideLine {
-    private opponentShapeMap: InputShapeMap = {
-        A: Shape.Rock,
-        B: Shape.Paper,
-        C: Shape.Scissors,
-    };
     private ourShapeMap: InputShapeMap = {
         X: Shape.Rock,
         Y: Shape.Paper,
@@ -94,7 +110,7 @@ export class SecretStrategyGuideLine implements StrategyGuideLine {
 
     toRound(opponentInput: string, ourInput: string) {
         return new Round(
-            this.opponentShapeMap[opponentInput],
+            getOpponentShape(opponentInput),
             this.ourShapeMap[ourInput]
         );
     }

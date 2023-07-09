@@ -148,6 +148,13 @@ describe("UltraTopSecretStrategyGuideLine", () => {
                 new Round(Shape.Rock, Shape.Scissors)
             );
         });
+        it("creates round for paper", () => {
+            const strategyGuideLine = new UltraTopSecretStrategyGuideLine();
+
+            expect(strategyGuideLine.toRound("B", losingInput)).to.deep.eq(
+                new Round(Shape.Paper, Shape.Rock)
+            );
+        });
     });
 
     describe("Draw Rounds", () => {
@@ -160,6 +167,7 @@ describe("UltraTopSecretStrategyGuideLine", () => {
             );
         });
     });
+
     describe("Win Rounds", () => {
         const winInput = "Z";
         it("creates round for rock", () => {
