@@ -45,6 +45,7 @@ export function determineShape(
 ): Shape {
     if (requestedResult === RequestResult.Win) {
         if (opponentShape.isPaper()) return Shape.Scissors;
+        if (opponentShape.isScissors()) return Shape.Rock;
         return Shape.Paper;
     }
 
