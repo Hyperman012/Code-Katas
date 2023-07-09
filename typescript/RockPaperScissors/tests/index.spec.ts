@@ -6,22 +6,32 @@ import { RoundResult } from "../src/RoundResult";
 
 describe("StrategyGuide", () => {
     const eightPointGame = ["A", "Y"];
+    const onePointGame = ["B", "X"];
+
     it("scores one round A Y", () => {
         const score = new StrategyGuide([eightPointGame]).score();
         expect(score).to.eq(8);
     });
     it("scores one round B X", () => {
-        const onePointGame = ["B", "X"];
         const score = new StrategyGuide([onePointGame]).score();
         expect(score).to.eq(1);
     });
 
-    it("scores multiple rounds", () => {
+    it("scores two rounds", () => {
         const score = new StrategyGuide([
             eightPointGame,
             eightPointGame,
         ]).score();
         expect(score).to.eq(16);
+    });
+
+    it("scores three rounds", () => {
+        const score = new StrategyGuide([
+            onePointGame,
+            onePointGame,
+            onePointGame,
+        ]).score();
+        expect(score).to.eq(3);
     });
 });
 
