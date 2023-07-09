@@ -160,6 +160,16 @@ describe("UltraTopSecretStrategyGuideLine", () => {
             );
         });
     });
+    describe("Win Rounds", () => {
+        const winInput = "Z";
+        it("creates round for rock", () => {
+            const strategyGuideLine = new UltraTopSecretStrategyGuideLine();
+
+            expect(strategyGuideLine.toRound("A", winInput)).to.deep.eq(
+                new Round(Shape.Rock, Shape.Paper)
+            );
+        });
+    });
 });
 
 describe("Shape", () => {

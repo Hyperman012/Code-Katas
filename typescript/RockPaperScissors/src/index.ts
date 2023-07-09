@@ -69,6 +69,7 @@ export function determineShape(
 }
 export class UltraTopSecretStrategyGuideLine implements StrategyGuideLine {
     toRound(opponentInput: string, ourInput: string): Round {
+        if (ourInput === "Z") return new Round(Shape.Rock, Shape.Paper);
         if (ourInput === "Y") return new Round(Shape.Rock, Shape.Rock);
 
         return new Round(Shape.Rock, Shape.Scissors);
