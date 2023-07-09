@@ -18,6 +18,10 @@ export class StrategyGuide {
         const ourInput = round[1];
         return new StrategyGuideLine().toRound(opponentInput, ourInput);
     }
+
+    static from(guidAsString: string) {
+        return new StrategyGuide([["A", "X"]]);
+    }
 }
 
 interface InputShapeMap {

@@ -33,6 +33,12 @@ describe("StrategyGuide", () => {
         ]).score();
         expect(score).to.eq(3);
     });
+
+    it("creates Strategy guide from input", () => {
+        const input = "A X";
+        const guide = StrategyGuide.from(input);
+        expect(guide).to.deep.eq(new StrategyGuide([["A", "X"]]));
+    });
 });
 
 describe("StrategyGuideLine", () => {
