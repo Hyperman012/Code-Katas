@@ -19,8 +19,11 @@ export class StrategyGuide {
         return new StrategyGuideLine().toRound(opponentInput, ourInput);
     }
 
-    static from(guidAsString: string) {
-        return new StrategyGuide([["A", "X"]]);
+    static from(guideAsString: string) {
+        const array = guideAsString
+            .split("\n")
+            .map((roundAsString) => roundAsString.split(" "));
+        return new StrategyGuide(array);
     }
 }
 

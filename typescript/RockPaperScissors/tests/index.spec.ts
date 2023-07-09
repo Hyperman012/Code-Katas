@@ -39,6 +39,16 @@ describe("StrategyGuide", () => {
         const guide = StrategyGuide.from(input);
         expect(guide).to.deep.eq(new StrategyGuide([["A", "X"]]));
     });
+    it("creates Strategy guide from input", () => {
+        const input = "A X\nA X";
+        const guide = StrategyGuide.from(input);
+        expect(guide).to.deep.eq(
+            new StrategyGuide([
+                ["A", "X"],
+                ["A", "X"],
+            ])
+        );
+    });
 });
 
 describe("StrategyGuideLine", () => {
