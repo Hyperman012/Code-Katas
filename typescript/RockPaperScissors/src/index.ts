@@ -39,23 +39,35 @@ export enum RequestResult {
     Draw,
 }
 
+function determineWinningShape(opponentShape: Shape) {
+    if (opponentShape.isPaper()) return Shape.Scissors;
+    if (opponentShape.isScissors()) return Shape.Rock;
+    return Shape.Paper;
+}
+
+function determineLosingShape(opponentShape: Shape) {
+    if (opponentShape.isRock()) return Shape.Scissors;
+    if (opponentShape.isScissors()) return Shape.Paper;
+    return Shape.Rock;
+}
+
+function determineDrawShape(opponentShape: Shape) {
+    return opponentShape;
+}
+
 export function determineShape(
     opponentShape: Shape,
     requestedResult: RequestResult
 ): Shape {
     if (requestedResult === RequestResult.Win) {
-        if (opponentShape.isPaper()) return Shape.Scissors;
-        if (opponentShape.isScissors()) return Shape.Rock;
-        return Shape.Paper;
+        return determineWinningShape(opponentShape);
     }
 
     if (requestedResult === RequestResult.Lose) {
-        if (opponentShape.isRock()) return Shape.Scissors;
-        if (opponentShape.isScissors()) return Shape.Paper;
-        return Shape.Rock;
+        return determineLosingShape(opponentShape);
     }
 
-    return opponentShape;
+    return determineDrawShape(opponentShape);
 }
 
 export class StrategyGuideLine {
