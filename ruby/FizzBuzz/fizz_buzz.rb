@@ -1,8 +1,6 @@
-class Default
+class FizzBuzz
   def process(input)
-    return "fizz" if input.equal? 3
-
-    input.to_s
+    input
   end
 
 end

@@ -1,4 +1,4 @@
-class Default
+class FizzBuzz
   def process(input)
     return 2
   end
