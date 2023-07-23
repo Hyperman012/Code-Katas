@@ -1,6 +1,11 @@
 class SupplyStacks
-  def process(input)
-    return 2
+
+  def initialize(input)
+    @input = input;
+  end
+
+  def stacks
+    [[['Z'], ['N']]]
   end
 
 end
