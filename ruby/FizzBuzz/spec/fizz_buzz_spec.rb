@@ -12,4 +12,9 @@ describe FizzBuzz do
     expect(fb.process(2)).to eq '2'
   end
 
+  it 'return "fizz" for 3' do
+    fb = FizzBuzz.new
+    expect(fb.process(3)).to eq 'fizz'
+  end
+
 end
