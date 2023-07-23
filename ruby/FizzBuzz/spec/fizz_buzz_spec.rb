@@ -17,4 +17,9 @@ describe FizzBuzz do
     expect(fb.process(3)).to eq 'fizz'
   end
 
+  it 'return "fizz" for 6' do
+    fb = FizzBuzz.new
+    expect(fb.process(6)).to eq 'fizz'
+  end
+
 end
