@@ -5,7 +5,12 @@ class SupplyStacks
   end
 
   def stacks
-    [%w[Z N], %w[M C D]]
+    lines = @input.split ("\n")
+    first_row = lines[0]
+    foo = first_row.tr("[", "").tr("]","")
+
+    pants = foo.split(" ")
+    pants.map { |crate| [crate]  }
   end
 
 end
