@@ -7,7 +7,7 @@ class SupplyStacks
   def stacks
     lines = @input.split ("\n")
     first_row = lines[0]
-    foo = first_row.tr("[", "").tr("]","")
+    foo = first_row.delete("[").delete("]")
 
     pants = foo.split(" ")
     pants.map { |crate| [crate]  }
