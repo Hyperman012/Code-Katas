@@ -32,5 +32,22 @@ describe SupplyStacks do
     expect(supply.stacks).to eq [%w[Z X], %w[M Y], %w[P Z]]
   end
 
+  it 'creates 3 Crate stacks of 2 length' do
+    smaller_input = "[Z] [M] [P]
+[X] [Y] [Z]
+ 1   2   3
+"
+    supply = SupplyStacks.new(smaller_input)
+    expect(supply.stacks).to eq [%w[Z X], %w[M Y], %w[P Z]]
+  end
+
+  it 'creates 1 Crate stacks of 1 length' do
+    smaller_input = "[Z]
+ 1
+"
+    supply = SupplyStacks.new(smaller_input)
+    expect(supply.stacks).to eq [%w[Z]]
+  end
+
 end
 

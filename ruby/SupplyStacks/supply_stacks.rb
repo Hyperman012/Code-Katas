@@ -6,7 +6,13 @@ class SupplyStacks
 
   def stacks
     lines = crate_lines
-    stacks = [[], [], []]
+    last_row = @input.split("\n").pop
+    lastLineList = last_row.split(" ")
+    stacks = []
+    for i in lastLineList
+      stacks.push([])
+    end
+
     lines.each do |line|
       strip_crate_line(line).each_with_index { |crate, index |
         stacks[index].push crate
