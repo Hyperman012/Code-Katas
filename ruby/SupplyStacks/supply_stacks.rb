@@ -5,7 +5,7 @@ class SupplyStacks
   end
 
   def stacks
-    [[['Z'], ['N']]]
+    [%w[Z N]]
   end
 
 end

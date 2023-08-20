@@ -16,8 +16,8 @@ move 1 from 1 to 2
 
 describe SupplyStacks do
   it 'creates first CrateStack' do
-    supply = SupplyStacks.new( test_input)
-    expect(supply.stacks).to eq [[['Z'], ['N']]]
+    supply = SupplyStacks.new(test_input)
+    expect(supply.stacks).to eq [ %w[Z N]]
   end
 
   xit 'creates a second CrateStack' do
