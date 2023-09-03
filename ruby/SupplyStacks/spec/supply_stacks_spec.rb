@@ -15,6 +15,14 @@ move 1 from 1 to 2
 "
 
 describe SupplyStacks do
+  it 'creates 1 Crate stacks of 1 length' do
+    smaller_input = "[Z]
+ 1
+"
+    supply = SupplyStacks.new(smaller_input)
+    expect(supply.stacks).to eq [%w[Z]]
+  end
+
   it 'creates 3 Crate stacks of 1 length' do
     smaller_input = "[Z] [M] [P]
  1   2   3
@@ -59,12 +67,12 @@ describe SupplyStacks do
     expect(supply.stacks).to eq [%w[X], %w[Y], %w[B Z]]
   end
 
-  it 'creates 1 Crate stacks of 1 length' do
-    smaller_input = "[Z]
- 1
+  it 'creates 4 Crate stacks' do
+    smaller_input = "[X] [Y] [Z] [A]
+ 1   2   3   4
 "
     supply = SupplyStacks.new(smaller_input)
-    expect(supply.stacks).to eq [%w[Z]]
+    expect(supply.stacks).to eq [%w[X], %w[Y], %w[Z], %w[A]]
   end
 
 end
