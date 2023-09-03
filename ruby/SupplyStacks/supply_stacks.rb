@@ -19,10 +19,13 @@ class SupplyStacks
   private
 
   def create_empty_stacks
-    last_row = @input.split("\n").pop
-    last_row.split(" ").map { |i|
+    line_of_number_of_stacks.map { |i|
       []
     }
+  end
+
+  def line_of_number_of_stacks
+    @input.split("\n").pop.split(" ")
   end
 
   def crate_lines
@@ -31,13 +34,15 @@ class SupplyStacks
   end
 
   def strip_crate_line(row)
-    last_row = @input.split("\n").pop
-    number_of_lines = last_row.split(" ").length
     crate_line = []
-    (0..number_of_lines - 1).each { |a|
+    (0..number_of_stacks - 1).each { |a|
       crate_line.push row[a * 4 + 1]
     }
     crate_line
+  end
+
+  def number_of_stacks
+    line_of_number_of_stacks.length
   end
 
 end
