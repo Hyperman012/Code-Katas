@@ -1,7 +1,7 @@
 class SupplyStacks
 
   def initialize(input)
-    @input = input;
+    @lines = input.split("\n")
   end
 
   def stacks
@@ -25,19 +25,19 @@ class SupplyStacks
   end
 
   def line_of_number_of_stacks
-    @input.split("\n").each do |line|
-      if line.include? " 1"
-        return line.split(" ")
-      end
-    end
+    @lines[index_of_stack_count].split(" ")
+  end
+
+  def number_of_stacks
+    line_of_number_of_stacks.length
   end
 
   def crate_lines
-    @input.split("\n").slice(0, index_of_stack_count)
+    @lines.slice(0, index_of_stack_count)
   end
 
   def index_of_stack_count
-    @input.split("\n").each_with_index do |line, index|
+    @lines.each_with_index do |line, index|
       return index if line.include? " 1"
     end
   end
@@ -48,10 +48,6 @@ class SupplyStacks
       crate_line.push row[a * 4 + 1]
     }
     crate_line
-  end
-
-  def number_of_stacks
-    line_of_number_of_stacks.length
   end
 
 end
