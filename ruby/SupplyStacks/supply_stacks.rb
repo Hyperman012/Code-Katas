@@ -33,17 +33,13 @@ class SupplyStacks
   end
 
   def crate_lines
-    split_lines = @input.split("\n")
-    index = 0
+    @input.split("\n").slice(0, index_of_stack_count)
+  end
 
-    @input.split("\n").each_with_index do |line, index2|
-      if line.include? " 1"
-        index = index2
-        break
-      end
+  def index_of_stack_count
+    @input.split("\n").each_with_index do |line, index|
+      return index if line.include? " 1"
     end
-
-    split_lines.slice(0, index)
   end
 
   def strip_crate_line(row)
