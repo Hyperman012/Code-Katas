@@ -25,12 +25,25 @@ class SupplyStacks
   end
 
   def line_of_number_of_stacks
-    @input.split("\n").pop.split(" ")
+    @input.split("\n").each do |line|
+      if line.include? " 1"
+        return line.split(" ")
+      end
+    end
   end
 
   def crate_lines
     split_lines = @input.split("\n")
-    split_lines.slice(0, split_lines.length-1)
+    index = 0
+
+    @input.split("\n").each_with_index do |line, index2|
+      if line.include? " 1"
+        index = index2
+        break
+      end
+    end
+
+    split_lines.slice(0, index)
   end
 
   def strip_crate_line(row)
