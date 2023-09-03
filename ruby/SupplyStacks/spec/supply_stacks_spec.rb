@@ -1,7 +1,6 @@
 require_relative '../supply_stacks'
 require 'rspec'
 
-
 test_input = "
     [D]
 [N] [C]
@@ -76,16 +75,22 @@ describe SupplyStacks do
   end
 
   describe 'with instructions' do
-
-      it 'creates 3 Crate stacks of 1 length' do
-        smaller_input = "[Z] [M] [P]
+    before do
+      @smaller_input = "[Z] [M] [P]
  1   2   3
 
 move 1 from 2 to 1
 "
-        supply = SupplyStacks.new(smaller_input)
-        expect(supply.stacks).to eq [%w[Z], %w[M], %w[P]]
-      end
+      @supply = SupplyStacks.new(@smaller_input)
+    end
+
+    it 'creates 3 Crate stacks of 1 length' do
+      expect(@supply.stacks).to eq [%w[Z], %w[M], %w[P]]
+    end
+
+    xit 'returns instructions' do
+      expect(@supply.instructions).to eq(['move 1 from 2 to 1'])
+    end
   end
 
 end

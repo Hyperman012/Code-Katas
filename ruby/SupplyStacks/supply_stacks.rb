@@ -9,7 +9,7 @@ class SupplyStacks
     stacks = create_empty_stacks
 
     lines.each do |line|
-      strip_crate_line(line).each_with_index { |crate, index |
+      strip_crate_line(line).each_with_index { |crate, index|
         stacks[index].push crate unless crate.nil? || crate == " "
       }
     end
