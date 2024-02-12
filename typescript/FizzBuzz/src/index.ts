@@ -1,3 +1,3 @@
-export function calculate(a : number) : string {
-    return ''
+export function calculate(input : number) : string {
+    return '1'
 }
