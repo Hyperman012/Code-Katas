@@ -1,3 +1,6 @@
 export function calculate(input : number) : string {
-    return '1'
+    if (input ==3)
+        return 'fizz'
+    else
+        return String(input)
 }
