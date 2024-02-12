@@ -1,3 +1,3 @@
-export function add(a : number, b : number) : number {
-    return a + b;
+export function calculate(a : number) : string {
+    return ''
 }
