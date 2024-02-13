@@ -1,6 +1,10 @@
 export function calculate(input : number) : string {
-    if (input ==3)
+
+    if (input%3==0 && input%5==0)
+        return 'fizzbuzz'
+    if (input%3 ==0)
         return 'fizz'
-    else
-        return String(input)
+     if (input%5==0)
+        return 'buzz'
+    return String(input)
 }
