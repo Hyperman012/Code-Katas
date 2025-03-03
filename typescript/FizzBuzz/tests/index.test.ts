@@ -1,14 +1,14 @@
 import { describe, expect, it } from "@jest/globals";
 import { getResult } from "../src";
 /*
- *Write a program that prints the numbers from 1 to 100.
- * But for multiples of three print “Fizz” instead of the number
- * and for the multiples of five print “Buzz”.
- * For numbers which are multiples of both three and five print “FizzBuzz “.
+ * write something when given a number,
+ * returns a string of that number unless:
+ * the input is a multiple of 3, in which case return Fizz
+ * or
+ * the input is a multiple of 5, in which case return Buzz
+ * or
+ * the input is a multiple of 3 and 5, in which case return FizzBuzz
  */
-
 describe("FizzBuzz", () => {
-    
-
-
+      
 });

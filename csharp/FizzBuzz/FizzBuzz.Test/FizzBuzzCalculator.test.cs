@@ -1,6 +1,6 @@
 namespace FizzBuzz.Test;
 /*
-* write some code when given a number,
+* write something when given a number,
 * returns a string of that number unless:
 * the input is a multiple of 3, in which case return Fizz
 * or
