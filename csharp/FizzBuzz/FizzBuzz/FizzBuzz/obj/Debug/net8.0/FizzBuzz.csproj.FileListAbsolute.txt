@@ -1,0 +1,12 @@
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/bin/Debug/net8.0/FizzBuzz.deps.json
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/bin/Debug/net8.0/FizzBuzz.dll
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/bin/Debug/net8.0/FizzBuzz.pdb
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/FizzBuzz.GeneratedMSBuildEditorConfig.editorconfig
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/FizzBuzz.AssemblyInfoInputs.cache
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/FizzBuzz.AssemblyInfo.cs
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/FizzBuzz.csproj.CoreCompileInputs.cache
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/FizzBuzz.sourcelink.json
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/FizzBuzz.dll
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/refint/FizzBuzz.dll
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/FizzBuzz.pdb
+/Users/whaley/workspace/Code-Katas/csharp/FizzBuzz/FizzBuzz/FizzBuzz/obj/Debug/net8.0/ref/FizzBuzz.dll
