@@ -1,3 +1,5 @@
-export function add(input: number, secondInput: number): number {
-    return input + secondInput;
+export function getResult(number: number): string {
+   return '';
 }
+
+
