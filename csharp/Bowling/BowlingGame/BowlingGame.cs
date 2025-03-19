@@ -1,9 +1,14 @@
 ﻿namespace Default;
 
-public class BowlingGame
+public class Game
 {
-    public int Add(int value, int value2)
+    public void roll(int pins)
     {
-        return value + value2;
+    
+    }
+
+    public int score()
+    {
+        return 0;
     }
 }
