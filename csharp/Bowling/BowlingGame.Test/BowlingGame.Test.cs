@@ -42,5 +42,27 @@ public class BowlingGameTest
         Assert.Equal(3, result);
     }
 
+    [Fact]
+    public void Score_With_Spare_Returns16()
+    {
+        _game.Roll(5);
+        _game.Roll(5);
 
+        _game.Roll(3);
+
+        int result = _game.Score();
+        Assert.Equal(16, result);
+    }
+
+    [Fact]
+    public void Score_With_Spare_With_Four_On_Third_Roll_Returns18()
+    {
+        _game.Roll(2);
+        _game.Roll(8);
+
+        _game.Roll(4);
+
+        int result = _game.Score();
+        Assert.Equal(18, result);
+    }
 }

@@ -12,6 +12,10 @@ public class Game
 
     public int Score()
     {
+        if (_rolls.Count == 3)
+        {
+            return _rolls.Sum() + _rolls.Last();
+        }
         return _rolls.Sum();
 
     }
