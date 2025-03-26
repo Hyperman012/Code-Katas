@@ -2,16 +2,16 @@
 
 public class Game
 {
-    private int _applesauce;
+    private int _score;
 
-    public void roll(int pins)
+    public void Roll(int pins)
     {
-        _applesauce = 1;
+        _score = 1;
     }
 
-    public int score()
+    public int Score()
     {
-        if (_applesauce == 1)
+        if (_score == 1)
         {
             return 1;
         }

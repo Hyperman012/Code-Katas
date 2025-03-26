@@ -5,7 +5,7 @@ public class BowlingGameTest
     public void NewGameHasScoreOf0()
     {
         var game = new Game();
-        int result = game.score();
+        int result = game.Score();
         Assert.Equal(0, result);
     }
 
@@ -14,9 +14,9 @@ public class BowlingGameTest
     {
         var game = new Game();
 
-        game.roll(1);
+        game.Roll(1);
 
-        int result = game.score();
+        int result = game.Score();
         Assert.Equal(1, result);
     }
 }
