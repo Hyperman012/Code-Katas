@@ -7,6 +7,12 @@ public class BowlingGameTest
     {
         _game = new Game();
     }
+    
+    private void RollSpare()
+    {
+        _game.Roll(5);
+        _game.Roll(5);
+    }
 
     [Fact]
     public void Score_ForNewGame_Returns0()
@@ -45,8 +51,7 @@ public class BowlingGameTest
     [Fact]
     public void Score_With_Spare_Returns16()
     {
-        _game.Roll(5);
-        _game.Roll(5);
+        RollSpare();
 
         _game.Roll(3);
 
@@ -54,11 +59,11 @@ public class BowlingGameTest
         Assert.Equal(16, result);
     }
 
+
     [Fact]
     public void Score_With_Spare_With_Four_On_Third_Roll_Returns18()
     {
-        _game.Roll(2);
-        _game.Roll(8);
+        RollSpare();
 
         _game.Roll(4);
 
