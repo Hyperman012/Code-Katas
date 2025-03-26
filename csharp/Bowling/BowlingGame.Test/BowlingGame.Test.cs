@@ -19,4 +19,13 @@ public class BowlingGameTest
         int result = game.Score();
         Assert.Equal(1, result);
     }
+
+    [Fact]
+    public void RollOfTwoHasScoreOf2()
+    {
+        var game = new Game();
+        game.Roll(2);
+        int result = game.Score();
+        Assert.Equal(2, result);
+    }
 }

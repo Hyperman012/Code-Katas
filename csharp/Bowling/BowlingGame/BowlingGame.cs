@@ -6,15 +6,11 @@ public class Game
 
     public void Roll(int pins)
     {
-        _score = 1;
+        _score = pins;
     }
 
     public int Score()
     {
-        if (_score == 1)
-        {
-            return 1;
-        }
-        return 0;
+        return _score;
     }
 }
