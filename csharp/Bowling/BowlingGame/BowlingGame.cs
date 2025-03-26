@@ -2,7 +2,7 @@
 
 public class Game
 {
-    private int _score;
+    private int _score = 0;
 
     public void Roll(int pins)
     {

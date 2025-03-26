@@ -1,31 +1,34 @@
 namespace Default.Test;
 public class BowlingGameTest
 {
+    private Game _game;
+
+    public BowlingGameTest()
+    {
+        _game = new Game();
+    }
+
     [Fact]
     public void NewGameHasScoreOf0()
     {
-        var game = new Game();
-        int result = game.Score();
+        int result = _game.Score();
         Assert.Equal(0, result);
     }
 
     [Fact]
     public void RollOfOneHasScoreOf1()
     {
-        var game = new Game();
+        _game.Roll(1);
 
-        game.Roll(1);
-
-        int result = game.Score();
+        int result = _game.Score();
         Assert.Equal(1, result);
     }
 
     [Fact]
     public void RollOfTwoHasScoreOf2()
     {
-        var game = new Game();
-        game.Roll(2);
-        int result = game.Score();
+        _game.Roll(2);
+        int result = _game.Score();
         Assert.Equal(2, result);
     }
 }
