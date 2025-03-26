@@ -32,9 +32,13 @@ public class BowlingGameTest
         Assert.Equal(2, result);
     }
 
-    //[Fact]
-    //public void Score_WithTwoRolls_IsTheSum()
-    //{
+    [Fact]
+    public void Score_WithARollOfOneAndARollOfTwo_Returns3()
+    {
+        _game.Roll(1);
+        _game.Roll(2);
 
-    //}
+        int result = _game.Score();
+        Assert.Equal(3, result);
+    }
 }

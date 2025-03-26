@@ -6,7 +6,7 @@ public class Game
 
     public void Roll(int pins)
     {
-        _score = pins;
+        _score += pins;
     }
 
     public int Score()
