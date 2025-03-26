@@ -2,10 +2,21 @@ namespace Default.Test;
 public class BowlingGameTest
 {
     [Fact]
-    public void Test1()
+    public void NewGameHasScoreOf0()
     {
-        var sut = new Game();
-        int result = sut.score();
+        var game = new Game();
+        int result = game.score();
         Assert.Equal(0, result);
+    }
+
+    [Fact]
+    public void RollOfOneHasScoreOf1()
+    {
+        var game = new Game();
+
+        game.roll(1);
+
+        int result = game.score();
+        Assert.Equal(1, result);
     }
 }
