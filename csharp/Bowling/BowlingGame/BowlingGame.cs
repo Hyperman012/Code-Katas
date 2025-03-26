@@ -2,15 +2,17 @@
 
 public class Game
 {
-    private int _score = 0;
+    List<int> _rolls = new();
 
     public void Roll(int pins)
     {
-        _score += pins;
+        _rolls.Add(pins);
+
     }
 
     public int Score()
     {
-        return _score;
+        return _rolls.Sum();
+
     }
 }
