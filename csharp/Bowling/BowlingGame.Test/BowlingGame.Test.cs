@@ -9,14 +9,14 @@ public class BowlingGameTest
     }
 
     [Fact]
-    public void NewGameHasScoreOf0()
+    public void Score_ForNewGame_Returns0()
     {
         int result = _game.Score();
         Assert.Equal(0, result);
     }
 
     [Fact]
-    public void RollOfOneHasScoreOf1()
+    public void Score_withRollOfOne_Returns1()
     {
         _game.Roll(1);
 
@@ -25,10 +25,16 @@ public class BowlingGameTest
     }
 
     [Fact]
-    public void RollOfTwoHasScoreOf2()
+    public void Score_withRollOfTwo_Returns2()
     {
         _game.Roll(2);
         int result = _game.Score();
         Assert.Equal(2, result);
     }
+
+    //[Fact]
+    //public void Score_WithTwoRolls_IsTheSum()
+    //{
+
+    //}
 }
