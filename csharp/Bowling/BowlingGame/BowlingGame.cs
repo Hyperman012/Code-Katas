@@ -16,12 +16,12 @@ public class Game
         int rollIndex = 0;
         for (var frame = 0; frame < 10 ; frame++)
         {
-            if (rolls[rollIndex] == 10) //strike
+            if (IsStrike(rollIndex))
             {
                 score += 10 + rolls[rollIndex + 1] + rolls[rollIndex + 2];
                 rollIndex++;
             }
-            else if (IsSpare(rollIndex)) // spare
+            else if (IsSpare(rollIndex))
             {
                 score += 10 + rolls[rollIndex + 2];
                 rollIndex += 2;
@@ -35,6 +35,11 @@ public class Game
         }
 
         return score;
+    }
+
+    private bool IsStrike(int rollIndex)
+    {
+        return rolls[rollIndex] == 10;
     }
 
     private bool IsSpare(int rollIndex)
