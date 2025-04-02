@@ -18,7 +18,7 @@ public class BingoTest
     }
 
     [Fact]
-    void WhenAllFieldsAreSetTheBoarIsInitialized()
+    void WhenAllFieldsAreSetTheBoardIsInitialized()
     {
         var anyValue = "42";
         board = new BingoBoard(1, 1);
