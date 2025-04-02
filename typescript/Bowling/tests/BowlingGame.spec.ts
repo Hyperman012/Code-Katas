@@ -1,7 +1,8 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import { BowlingGame, Frame } from '../src/BowlingGame';
+import { BowlingGame } from '../src/BowlingGame';
+import {Frame} from "../src/Frame";
 
 describe('Frame', () => {
     it('has a 0 score', () => {
