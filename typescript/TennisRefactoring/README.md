@@ -1,4 +1,6 @@
-# Tennis Refactoring Kata in C#
+# Tennis Refactoring Kata in Typescript
+
+_Support this and all my katas via [Patreon](https://www.patreon.com/EmilyBache)_
 
 # Tennis Refactoring Kata
 
@@ -32,15 +34,3 @@ Here is a description of the problem this code is designed to solve: [Tennis Kat
 
 ## Code Reading Practice
 Test your code reading skills. Here is a description of what to do: [Scanning for Code Smells](https://sammancoaching.org/exercises/code_reading.html). There are suitable lists of urls to open in some of the language subdirectories.
-
-
-## Code Reading Practice
-Here is a list of github urls of all the TennisGame C# classes:
-
-* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/csharp/Tennis/TennisGame1.cs
-* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/csharp/Tennis/TennisGame2.cs
-* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/csharp/Tennis/TennisGame3.cs
-* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/csharp/Tennis/TennisGame4.cs
-* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/csharp/Tennis/TennisGame5.cs
-* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/csharp/Tennis/TennisGame6.cs
-
