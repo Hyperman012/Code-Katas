@@ -1,6 +1,5 @@
 namespace Default.Test;
 
-
 public class HelloWorldSpeakerTest
 {
     [Fact]
