@@ -1,4 +1,4 @@
-namespace Default;
+namespace HelloWorldSpeaker2;
 
 public class RealListener : IListener
 {

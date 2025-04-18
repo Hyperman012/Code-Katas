@@ -1,4 +1,4 @@
-namespace FizzBuzz;
+namespace HelloWorldSpeaker2;
 
 public interface IWordSource
 {

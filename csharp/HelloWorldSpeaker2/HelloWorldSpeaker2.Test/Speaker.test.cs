@@ -1,4 +1,4 @@
-namespace Default.Test;
+namespace HelloWorldSpeaker2.Test;
 
 public class SpeakerTest
 {
