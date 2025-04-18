@@ -1,4 +1,4 @@
-namespace Default;
+namespace HelloWorldSpeaker;
 
 public interface IListener
 {
