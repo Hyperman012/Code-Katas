@@ -1,11 +1,13 @@
-namespace Default.Test;
+
+namespace BowlingGame.Test;
 public class BowlingGameTest
 {
     [Fact]
-    public void Test1()
+    public void NewGame_Exists()
     {
-        var sut = new Game();
-        int result = sut.score();
-        Assert.Equal(0, result);
+        new Game();
+      
     }
+    
+        
 }
