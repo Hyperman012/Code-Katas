@@ -10,7 +10,7 @@ public class Bug2
 
         int score = 10;
 
-        if (score == 10)
+        if (score = 10)
         {
             return "Perfect score!";
         }

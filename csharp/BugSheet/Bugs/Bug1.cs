@@ -8,7 +8,7 @@ public class Bug1
         // Bug type: 
         // What did you change to fix:
 
-        int num = 5;
+        int num = 5
         Console.WriteLine("The number is " + num);
     }
 }
